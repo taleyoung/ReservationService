@@ -31,13 +31,3 @@ build/
 
 ### VS Code ###
 .vscode/
-
-.mvn/timing.properties
-.mvn/wrapper/maven-wrapper.jar
-
-**/mvnw
-**/mvnw.cmd
-
-**/.mvn
-**/target/
-.idea
