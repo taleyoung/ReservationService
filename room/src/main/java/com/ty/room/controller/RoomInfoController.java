@@ -22,7 +22,7 @@ public class RoomInfoController {
     @Autowired
     RoomInfoService roomInfoService;
 
-    @GetMapping("/")
+    @GetMapping("/info")
     @ApiOperation(value = "获取房间列表")
     public ApiResp list(){
         Map map = new HashMap<>();

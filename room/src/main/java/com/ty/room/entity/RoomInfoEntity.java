@@ -12,10 +12,13 @@ public class RoomInfoEntity implements Serializable {
 
     @TableId
     private Long id;
-
     private String name;
-    private Long status;
-    private Long unitId;
+    private String device;
+    private Long capacity;
+    private String location;
     private String description;
-    private Long userId;
+    private Long adminId;
+    private Long status;
+    private String areaName;
+    private Long areaId;
 }
