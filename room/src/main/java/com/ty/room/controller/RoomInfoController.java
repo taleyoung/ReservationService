@@ -3,6 +3,7 @@ package com.ty.room.controller;
 import com.ty.common.utils.ApiResp;
 import com.ty.room.entity.RoomInfoEntity;
 import com.ty.room.service.RoomInfoService;
+import com.ty.room.vo.RoomInfoVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +28,7 @@ public class RoomInfoController {
     public ApiResp list(){
         Map map = new HashMap<>();
         map.put("xx","xx");
-        List<RoomInfoEntity> list = roomInfoService.queryPage(map);
+        List<RoomInfoVo> list = roomInfoService.queryPage(map);
         return ApiResp.retOK(list);
     }
 }
