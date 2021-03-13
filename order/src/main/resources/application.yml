@@ -5,7 +5,7 @@ spring:
   datasource:
     username: root
     password: root
-    url: jdbc:mysql://${ipAddr}:3306/reserve_room?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8
+    url: jdbc:mysql://${ipAddr}:3306/reserve_order?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8
     driver-class-name: com.mysql.cj.jdbc.Driver
   cloud:
     nacos:
@@ -13,5 +13,3 @@ spring:
         server-addr: 127.0.0.1:8848
   application:
     name: room
-  jackson:
-    date-format: yyyy-MM-dd HH:mm:ss
