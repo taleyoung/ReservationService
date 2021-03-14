@@ -12,7 +12,7 @@ import java.util.List;
 @TableName("meeting_room")
 public class MeetingRoomEntity implements Serializable {
 
-    @TableId(value = "id", type= IdType.AUTO)
+    @TableId
     private Long id;
     private String name;
     private String device;

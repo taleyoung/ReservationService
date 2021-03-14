@@ -2,9 +2,8 @@ package com.ty.room.service;
 
 import com.ty.common.utils.PageUtils;
 import com.ty.room.entity.MeetingEntity;
-import com.ty.room.entity.MeetingRoomEntity;
-import com.ty.room.vo.RoomMeetingVo;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -17,7 +16,7 @@ public interface MeetingService {
 
     void deleteMeeting(Long id);
 
-    List<MeetingEntity> getMeetingByRoomIds(List<Long> roomIds);
+    List<MeetingEntity> getMeetingByRoomIdsAndDate(List<Long> roomIds, Date date);
 
     MeetingEntity getMeetingById(Long id);
 }

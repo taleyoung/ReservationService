@@ -14,7 +14,7 @@ import java.util.Date;
 @TableName("meeting")
 public class MeetingEntity implements Serializable {
 
-    @TableId(value = "id", type= IdType.AUTO)
+    @TableId
     private Long id;
     private String name;
     private Long meetingRoomId;

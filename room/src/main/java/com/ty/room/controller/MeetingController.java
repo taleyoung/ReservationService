@@ -3,7 +3,6 @@ package com.ty.room.controller;
 import com.ty.common.utils.ApiResp;
 import com.ty.common.utils.PageUtils;
 import com.ty.room.entity.MeetingEntity;
-import com.ty.room.entity.MeetingRoomEntity;
 import com.ty.room.service.MeetingService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

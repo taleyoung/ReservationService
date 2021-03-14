@@ -12,6 +12,7 @@ import com.ty.room.service.MeetingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -44,8 +45,10 @@ public class MeetingServiceImpl extends ServiceImpl<MeetingDao, MeetingEntity> i
     }
 
     @Override
-    public List<MeetingEntity> getMeetingByRoomIds(List<Long> roomIds) {
-        QueryWrapper<MeetingEntity> wrapper = new QueryWrapper<MeetingEntity>().in("meeting_room_id", roomIds);
+    public List<MeetingEntity> getMeetingByRoomIdsAndDate(List<Long> roomIds, Date date) {
+        QueryWrapper<MeetingEntity> wrapper = new QueryWrapper<MeetingEntity>().in("meeting_room_id", roomIds)
+                .eq("date", date)
+                .orderByAsc("start");
         List<MeetingEntity> meetingEntities = this.baseMapper.selectList(wrapper);
 
         return meetingEntities;

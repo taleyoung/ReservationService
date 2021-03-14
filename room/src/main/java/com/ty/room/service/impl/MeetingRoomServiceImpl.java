@@ -1,7 +1,6 @@
 package com.ty.room.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.ty.common.utils.PageUtils;
@@ -13,14 +12,12 @@ import com.ty.room.service.MeetingRoomService;
 import com.ty.room.service.MeetingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.util.ObjectUtils;
-import org.springframework.util.StringUtils;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 @Service("MeetingRoomService")
 public class MeetingRoomServiceImpl extends ServiceImpl<MeetingRoomDao, MeetingRoomEntity> implements MeetingRoomService {
@@ -32,13 +29,14 @@ public class MeetingRoomServiceImpl extends ServiceImpl<MeetingRoomDao, MeetingR
     MeetingService meetingService;
 
     @Override
-    public PageUtils queryPage(Map<String, Object> params, Boolean meetingFlag) {
+    public PageUtils queryPage(Map<String, Object> params, Date date) {
         IPage<MeetingRoomEntity> page = this.page(new Query<MeetingRoomEntity>().getPage(params), new QueryWrapper<>());
-        if(!meetingFlag){
+
+        if(date == null){
             return new PageUtils(page);
         }
         List<Long> roomIdList = page.getRecords().stream().map(MeetingRoomEntity::getId).collect(Collectors.toList());
-        List<MeetingEntity> meetingList = meetingService.getMeetingByRoomIds(roomIdList);
+        List<MeetingEntity> meetingList = meetingService.getMeetingByRoomIdsAndDate(roomIdList,  date);
         List<MeetingRoomEntity> collect = page.getRecords().stream().map(record -> {
             List<MeetingRoomEntity.RsvTime> rsvTimeList = new ArrayList<>();
             meetingList.stream().forEach(item -> {

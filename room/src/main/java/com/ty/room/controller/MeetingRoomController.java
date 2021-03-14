@@ -10,8 +10,10 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
-import java.util.List;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.util.Date;
 import java.util.Map;
 
 @Api(tags = "房间管理")
@@ -25,8 +27,9 @@ public class MeetingRoomController {
 
     @GetMapping("/meeting-room")
     @ApiOperation(value = "获取房间列表")
-    public ApiResp<PageUtils> roomList(@RequestParam Map<String, Object> pageParams, @RequestParam(value = "meetingFlag", required = false) String meetingFlag ){
-        PageUtils list = meetingRoomService.queryPage(pageParams, Boolean.parseBoolean(meetingFlag));
+    public ApiResp<PageUtils> roomList(@RequestParam Map<String, Object> pageParams, @RequestParam(value = "date", required = false) String date ) throws ParseException {
+        SimpleDateFormat sdf = new SimpleDateFormat( "yyyy-MM-dd" );
+        PageUtils list = meetingRoomService.queryPage(pageParams, sdf.parse(date));
         return ApiResp.retOK(list);
     }
 
