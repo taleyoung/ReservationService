@@ -8,6 +8,7 @@ import com.ty.room.vo.RoomMeetingVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
@@ -29,7 +30,7 @@ public class MeetingRoomController {
     @ApiOperation(value = "获取房间列表")
     public ApiResp<PageUtils> roomList(@RequestParam Map<String, Object> pageParams, @RequestParam(value = "date", required = false) String date ) throws ParseException {
         SimpleDateFormat sdf = new SimpleDateFormat( "yyyy-MM-dd" );
-        PageUtils list = meetingRoomService.queryPage(pageParams, sdf.parse(date));
+        PageUtils list = meetingRoomService.queryPage(pageParams, date==null ? null : sdf.parse(date) );
         return ApiResp.retOK(list);
     }
 

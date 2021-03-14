@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ty.room.dao.HotelRoomItemDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ty.room.entity.HotelRoomItemEntity">
+        <id column="id" property="id" />
+        <result column="hotel_id" property="hotelId" />
+        <result column="hotel_room_id" property="hotelRoomId" />
+        <result column="date" property="date" />
+        <result column="ware_count" property="wareCount" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, hotel_id, hotel_room_id, date, ware_count, create_time, update_time
+    </sql>
+
+</mapper>
