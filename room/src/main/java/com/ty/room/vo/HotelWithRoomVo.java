@@ -1,16 +1,13 @@
-package com.ty.room.entity;
+package com.ty.room.vo;
 
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.ty.room.entity.HotelRoomEntity;
 import lombok.Data;
 
-import java.io.Serializable;
 import java.sql.Date;
+import java.util.List;
 
 @Data
-@TableName("hotel")
-public class HotelEntity implements Serializable {
-    @TableId
+public class HotelWithRoomVo {
     private Long id;
     private String name;
     private String image;
@@ -20,4 +17,5 @@ public class HotelEntity implements Serializable {
     private String phoneNumber;
     private Date createTime;
     private Date updateTime;
+    private List<HotelRoomEntity> rooms;
 }

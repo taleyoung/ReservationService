@@ -9,13 +9,19 @@ import com.ty.room.dao.HotelRoomDao;
 import com.ty.room.entity.HotelEntity;
 import com.ty.room.entity.HotelRoomEntity;
 import com.ty.room.service.HotelRoomService;
+import com.ty.room.service.HotelService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Map;
 
 
 @Service("HotelRoomService")
 public class HotelRoomServiceImpl extends ServiceImpl<HotelRoomDao, HotelRoomEntity> implements HotelRoomService {
+    @Autowired
+    HotelService hotelService;
+
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
         IPage page = this.page(new Query<HotelRoomEntity>().getPage(params), new QueryWrapper<>());
@@ -24,6 +30,10 @@ public class HotelRoomServiceImpl extends ServiceImpl<HotelRoomDao, HotelRoomEnt
 
     @Override
     public void add(HotelRoomEntity hotelRoomEntity) {
+        if(hotelRoomEntity.getHotelName() == null){
+            HotelEntity hotelEntity = hotelService.getHotelById(hotelRoomEntity.getHotelId());
+            hotelRoomEntity.setHotelName(hotelEntity.getName());
+        }
         this.save(hotelRoomEntity);
     }
 
@@ -35,5 +45,12 @@ public class HotelRoomServiceImpl extends ServiceImpl<HotelRoomDao, HotelRoomEnt
     @Override
     public void delete(Long id) {
         this.baseMapper.deleteById(id);
+    }
+
+    @Override
+    public List<HotelRoomEntity> getHotelRoomByHotelId(Long id) {
+        QueryWrapper<HotelRoomEntity> wrapper = new QueryWrapper<HotelRoomEntity>().eq("hotel_id", id);
+        List<HotelRoomEntity> hotelRoomEntities = this.baseMapper.selectList(wrapper);
+        return hotelRoomEntities;
     }
 }

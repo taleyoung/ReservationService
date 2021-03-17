@@ -19,27 +19,27 @@ public class HotelRoomController {
     @Autowired
     HotelRoomService hotelRoomService;
 
-    @GetMapping("/")
+    @GetMapping("")
     @ApiOperation("获取酒店房间列表")
     public ApiResp<PageUtils> queryPage(@RequestParam(required = false) Map<String, Object> params){
         PageUtils list = hotelRoomService.queryPage(params);
         return ApiResp.retOK(list);
     }
-    @PostMapping("/")
+    @PostMapping("")
     @ApiOperation(value = "添加酒店房间")
     public ApiResp add(@RequestBody HotelRoomEntity hotelRoomEntity){
         hotelRoomService.add(hotelRoomEntity);
         return ApiResp.retOK();
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("{id}")
     @ApiOperation(value = "修改酒店房间信息")
     public ApiResp update(@PathVariable("id") String id, @RequestBody HotelRoomEntity hotelRoomEntity){
         hotelRoomService.update(Long.valueOf(id), hotelRoomEntity);
         return ApiResp.retOK();
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("{id}")
     @ApiOperation(value = "删除酒店")
     public ApiResp delete(@PathVariable("id") String id){
         hotelRoomService.delete(Long.valueOf(id));
