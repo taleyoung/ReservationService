@@ -1,13 +1,13 @@
 package com.ty.room.vo;
 
-import com.ty.room.entity.HotelRoomEntity;
+import com.ty.room.entity.HotelRoomTypeEntity;
 import lombok.Data;
 
 import java.sql.Date;
 import java.util.List;
 
 @Data
-public class HotelWithRoomVo {
+public class HotelWithRoomTypeVo {
     private Long id;
     private String name;
     private String image;
@@ -17,5 +17,5 @@ public class HotelWithRoomVo {
     private String phoneNumber;
     private Date createTime;
     private Date updateTime;
-    private List<HotelRoomEntity> rooms;
+    private List<HotelRoomTypeEntity> rooms;
 }

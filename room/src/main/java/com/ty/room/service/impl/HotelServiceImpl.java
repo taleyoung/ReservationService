@@ -7,10 +7,10 @@ import com.ty.common.utils.PageUtils;
 import com.ty.common.utils.Query;
 import com.ty.room.dao.HotelDao;
 import com.ty.room.entity.HotelEntity;
-import com.ty.room.entity.HotelRoomEntity;
-import com.ty.room.service.HotelRoomService;
+import com.ty.room.entity.HotelRoomTypeEntity;
+import com.ty.room.service.HotelRoomTypeService;
 import com.ty.room.service.HotelService;
-import com.ty.room.vo.HotelWithRoomVo;
+import com.ty.room.vo.HotelWithRoomTypeVo;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,7 +22,7 @@ import java.util.Map;
 public class HotelServiceImpl extends ServiceImpl<HotelDao, HotelEntity> implements HotelService {
 
     @Autowired
-    HotelRoomService hotelRoomService;
+    HotelRoomTypeService hotelRoomTypeService;
 
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
@@ -52,12 +52,12 @@ public class HotelServiceImpl extends ServiceImpl<HotelDao, HotelEntity> impleme
     }
 
     @Override
-    public HotelWithRoomVo getHotelWithRoomById(Long id) {
-        HotelWithRoomVo hotelWithRoomVo = new HotelWithRoomVo();
-        List<HotelRoomEntity> hotelRoomList = hotelRoomService.getHotelRoomByHotelId(id);
+    public HotelWithRoomTypeVo getHotelWithRoomById(Long id) {
+        HotelWithRoomTypeVo hotelWithRoomTypeVo = new HotelWithRoomTypeVo();
+        List<HotelRoomTypeEntity> hotelRoomList = hotelRoomTypeService.getHotelRoomByHotelId(id);
         HotelEntity hotelById = this.getHotelById(id);
-        BeanUtils.copyProperties(hotelById, hotelWithRoomVo);
-        hotelWithRoomVo.setRooms(hotelRoomList);
-        return hotelWithRoomVo;
+        BeanUtils.copyProperties(hotelById, hotelWithRoomTypeVo);
+        hotelWithRoomTypeVo.setRooms(hotelRoomList);
+        return hotelWithRoomTypeVo;
     }
 }

@@ -8,8 +8,8 @@ import lombok.Data;
 import java.io.Serializable;
 
 @Data
-@TableName("hotel_room")
-public class HotelRoomEntity implements Serializable {
+@TableName("hotel_room_type")
+public class HotelRoomTypeEntity implements Serializable {
     @TableId
     private Long id;
     private String name;

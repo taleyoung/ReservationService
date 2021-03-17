@@ -4,7 +4,7 @@ import com.ty.common.utils.ApiResp;
 import com.ty.common.utils.PageUtils;
 import com.ty.room.entity.HotelEntity;
 import com.ty.room.service.HotelService;
-import com.ty.room.vo.HotelWithRoomVo;
+import com.ty.room.vo.HotelWithRoomTypeVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +30,7 @@ public class HotelController {
     @GetMapping("/{id}")
     @ApiOperation("根据id获取带房型的酒店详情")
     public ApiResp getHotelAndRoomById(@PathVariable("id") String id){
-        HotelWithRoomVo res = hotelService.getHotelWithRoomById(Long.valueOf(id));
+        HotelWithRoomTypeVo res = hotelService.getHotelWithRoomById(Long.valueOf(id));
         return ApiResp.retOK(res);
     }
 
