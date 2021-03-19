@@ -1,10 +1,24 @@
 package com.ty.order.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.ty.common.enume.CheckInEnum;
+import com.ty.common.to.HotelRoomTo;
+import com.ty.common.utils.ApiResp;
 import com.ty.order.entity.HotelCheckInEntity;
 import com.ty.order.dao.HotelCheckInDao;
+import com.ty.order.feign.RoomFeignService;
 import com.ty.order.service.HotelCheckInService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.ty.order.vo.HotelOrderVo;
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * <p>
@@ -17,4 +31,87 @@ import org.springframework.stereotype.Service;
 @Service
 public class HotelCheckInServiceImpl extends ServiceImpl<HotelCheckInDao, HotelCheckInEntity> implements HotelCheckInService {
 
+    @Autowired
+    RoomFeignService roomFeignService;
+
+    @Override
+    public List<HotelCheckInEntity> getRecordsByTypeAndDate(Integer hotelRoomTypeId, Date date) {
+        java.sql.Date sqlDate = new java.sql.Date(date.getTime());
+        QueryWrapper<HotelCheckInEntity> wrapper = new QueryWrapper<HotelCheckInEntity>()
+                .eq("hotel_room_type_id", hotelRoomTypeId)
+                .eq("date",sqlDate);
+        List<HotelCheckInEntity> list = this.list(wrapper);
+        return list;
+    }
+
+    @Override
+    public HotelRoomTo newFreeRoomByTypeAndDate(Integer hotelRoomTypeId, Date date) {
+        List<HotelCheckInEntity> recordsByTypeAndDate = this.getRecordsByTypeAndDate(hotelRoomTypeId, date);
+        List<Integer> reservedRoomIds = recordsByTypeAndDate.stream().map(HotelCheckInEntity::getHotelRoomId).collect(Collectors.toList());
+
+        HotelRoomTo hotelRoomTo = new HotelRoomTo();
+        ApiResp<List<HotelRoomTo>> res = roomFeignService.getListByTypeId(hotelRoomTypeId);
+        if(res.getCode() != 0){
+            return null;
+        }
+        List<HotelRoomTo> allHotelRooms = res.getData();
+        List<HotelRoomTo> freeHotelRooms = new ArrayList<>();
+        allHotelRooms.stream().forEach(item->{
+            if(!reservedRoomIds.contains(item.getId())){
+                freeHotelRooms.add(item);
+            }
+        });
+        if(freeHotelRooms.size() < 1){
+            return null;
+        }
+        //分配空闲房间的策略
+        return freeHotelRooms.get(0);
+    }
+
+    @Override
+    public void add(Integer orderId, HotelOrderVo hotelOrderVo) {
+        Integer hotelRoomTypeId = hotelOrderVo.getHotelRoomTypeId();
+        HotelCheckInEntity hotelCheckInEntity = new HotelCheckInEntity();
+        hotelCheckInEntity.setOrderId(orderId);
+        hotelCheckInEntity.setHotelRoomTypeId(hotelRoomTypeId);
+        hotelCheckInEntity.setUserId(hotelOrderVo.getUserId());
+        hotelCheckInEntity.setUserName(hotelOrderVo.getUserName());
+        hotelCheckInEntity.setPersonName(hotelOrderVo.getPersonName());
+        hotelCheckInEntity.setPersonIdNumber(hotelOrderVo.getPersonIdNumber());
+        hotelCheckInEntity.setExpectedTime(hotelOrderVo.getExpectedTime());
+        hotelCheckInEntity.setStatus(CheckInEnum.WAIT_PAYED.getCode());
+        //date  hotel_room_id / num
+        List<Date> dateList = this.getBetweenDates(hotelOrderVo.getStartDate(), hotelOrderVo.getEndDate());
+        dateList.stream().forEach(date->{
+            HotelCheckInEntity temp = new HotelCheckInEntity();
+            BeanUtils.copyProperties(hotelCheckInEntity, temp);
+            temp.setDate(date);
+            HotelRoomTo hotelRoomTo = this.newFreeRoomByTypeAndDate(hotelRoomTypeId, date);
+            temp.setHotelRoomId(hotelRoomTo.getId());
+            temp.setHotelRoomNum(hotelRoomTo.getRoomNum());
+            this.save(temp);
+        });
+        return;
+    }
+
+    private List<Date> getBetweenDates(Date begin, Date end) {
+        List<Date> result = new ArrayList<Date>();
+        Calendar tempStart = Calendar.getInstance();
+        tempStart.setTime(begin);
+            /* Calendar tempEnd = Calendar.getInstance();
+            tempStart.add(Calendar.DAY_OF_YEAR, 1);
+            tempEnd.setTime(end);
+            while (tempStart.before(tempEnd)) {
+                result.add(tempStart.getTime());
+                tempStart.add(Calendar.DAY_OF_YEAR, 1);
+            }*/
+
+            //含头不含尾
+        while(begin.getTime()<end.getTime()){
+            result.add( tempStart.getTime());
+            tempStart.add(Calendar.DAY_OF_YEAR, 1);
+            begin = tempStart.getTime();
+        }
+        return result;
+    }
 }

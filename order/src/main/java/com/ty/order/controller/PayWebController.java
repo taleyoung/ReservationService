@@ -5,18 +5,19 @@ import com.ty.order.config.AlipayTemplate;
 import com.ty.order.service.HotelOrderService;
 import com.ty.order.vo.HotelOrderVo;
 import com.ty.order.vo.PayVo;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * <p>Title: PayWebController</p>
  * Description：
  * date：2020/7/4 19:59
  */
-@Controller
+@Api("支付宝跳转页")
+@RestController
+@RequestMapping("order")
 public class PayWebController {
 
 	@Autowired

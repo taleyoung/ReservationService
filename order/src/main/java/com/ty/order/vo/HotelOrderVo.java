@@ -3,17 +3,19 @@ package com.ty.order.vo;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
+import java.sql.Date;
+import java.sql.Time;
 
 @Data
 public class HotelOrderVo {
 
     private Integer hotelRoomTypeId;
 
-    private LocalDate startDate;
+    private Date startDate;
 
-    private LocalDate endDate;
+    private Date endDate;
+
+    private Time expectedTime;
 
     private Integer userId;
 
@@ -26,8 +28,5 @@ public class HotelOrderVo {
     private Integer totalPrice;
 
     private Integer payType;
-
-    private Integer status;
-
 
 }
