@@ -1,5 +1,6 @@
 package com.ty.room.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.models.auth.In;
@@ -11,7 +12,7 @@ import java.io.Serializable;
 @TableName("hotel_room_type")
 public class HotelRoomTypeEntity implements Serializable {
     @TableId
-    private Long id;
+    private Integer id;
     private String name;
     private Long hotelId;
     private String hotelName;
@@ -19,4 +20,7 @@ public class HotelRoomTypeEntity implements Serializable {
     private Integer bedCount;
     private Integer originalPrice;
     private Integer wareCount;
+
+    @TableField(exist = false)
+    private Integer wareWithDate;
 }

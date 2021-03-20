@@ -35,6 +35,10 @@ public class HotelOrderEntity implements Serializable {
 
     private Integer hotelRoomTypeId;
 
+    private String hotelRoomTypeName;
+
+    private String hotelName;
+
     private Date startDate;
 
     private Date endDate;

@@ -10,6 +10,9 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Map;
 
 @Api(value = "酒店管理")
@@ -29,8 +32,9 @@ public class HotelController {
 
     @GetMapping("/{id}")
     @ApiOperation("根据id获取带房型的酒店详情")
-    public ApiResp getHotelAndRoomById(@PathVariable("id") String id){
-        HotelWithRoomTypeVo res = hotelService.getHotelWithRoomById(Long.valueOf(id));
+    public ApiResp getHotelAndRoomByIdAndDate(@PathVariable("id") String id, @RequestParam("date") String date) throws ParseException {
+        SimpleDateFormat sdf = new SimpleDateFormat( "yyyy-MM-dd" );
+        HotelWithRoomTypeVo res = hotelService.getHotelWithRoomById(Long.valueOf(id), sdf.parse(date));
         return ApiResp.retOK(res);
     }
 

@@ -15,6 +15,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -52,9 +53,9 @@ public class HotelServiceImpl extends ServiceImpl<HotelDao, HotelEntity> impleme
     }
 
     @Override
-    public HotelWithRoomTypeVo getHotelWithRoomById(Long id) {
+    public HotelWithRoomTypeVo getHotelWithRoomById(Long id, Date date) {
         HotelWithRoomTypeVo hotelWithRoomTypeVo = new HotelWithRoomTypeVo();
-        List<HotelRoomTypeEntity> hotelRoomList = hotelRoomTypeService.getHotelRoomByHotelId(id);
+        List<HotelRoomTypeEntity> hotelRoomList = hotelRoomTypeService.getRoomByHotelIdAndDate(id, date);
         HotelEntity hotelById = this.getHotelById(id);
         BeanUtils.copyProperties(hotelById, hotelWithRoomTypeVo);
         hotelWithRoomTypeVo.setRooms(hotelRoomList);

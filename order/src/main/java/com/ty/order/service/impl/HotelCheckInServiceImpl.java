@@ -1,9 +1,12 @@
 package com.ty.order.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.ty.common.enume.CheckInEnum;
 import com.ty.common.to.HotelRoomTo;
 import com.ty.common.utils.ApiResp;
+import com.ty.common.utils.PageUtils;
+import com.ty.common.utils.Query;
 import com.ty.order.entity.HotelCheckInEntity;
 import com.ty.order.dao.HotelCheckInDao;
 import com.ty.order.feign.RoomFeignService;
@@ -14,10 +17,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -44,8 +44,7 @@ public class HotelCheckInServiceImpl extends ServiceImpl<HotelCheckInDao, HotelC
         return list;
     }
 
-    @Override
-    public HotelRoomTo newFreeRoomByTypeAndDate(Integer hotelRoomTypeId, Date date) {
+    public List<HotelRoomTo> getFreeHotelRooms(Integer hotelRoomTypeId, Date date){
         List<HotelCheckInEntity> recordsByTypeAndDate = this.getRecordsByTypeAndDate(hotelRoomTypeId, date);
         List<Integer> reservedRoomIds = recordsByTypeAndDate.stream().map(HotelCheckInEntity::getHotelRoomId).collect(Collectors.toList());
 
@@ -61,6 +60,12 @@ public class HotelCheckInServiceImpl extends ServiceImpl<HotelCheckInDao, HotelC
                 freeHotelRooms.add(item);
             }
         });
+        return freeHotelRooms;
+    }
+
+    @Override
+    public HotelRoomTo newFreeRoomByTypeAndDate(Integer hotelRoomTypeId, Date date) {
+        List<HotelRoomTo> freeHotelRooms = this.getFreeHotelRooms(hotelRoomTypeId, date);
         if(freeHotelRooms.size() < 1){
             return null;
         }
@@ -69,11 +74,24 @@ public class HotelCheckInServiceImpl extends ServiceImpl<HotelCheckInDao, HotelC
     }
 
     @Override
+    public Integer getWareWithDate(Integer hotelRoomTypeId, Date date) {
+        List<HotelRoomTo> freeHotelRooms = this.getFreeHotelRooms(hotelRoomTypeId, date);
+        if(freeHotelRooms.size() < 1){
+            return 0;
+        }
+        return freeHotelRooms.size();
+    }
+
+
+
+    @Override
     public void add(Integer orderId, HotelOrderVo hotelOrderVo) {
         Integer hotelRoomTypeId = hotelOrderVo.getHotelRoomTypeId();
         HotelCheckInEntity hotelCheckInEntity = new HotelCheckInEntity();
         hotelCheckInEntity.setOrderId(orderId);
         hotelCheckInEntity.setHotelRoomTypeId(hotelRoomTypeId);
+        hotelCheckInEntity.setHotelName(hotelOrderVo.getHotelName());
+        hotelCheckInEntity.setHotelRoomTypeName(hotelOrderVo.getHotelRoomTypeName());
         hotelCheckInEntity.setUserId(hotelOrderVo.getUserId());
         hotelCheckInEntity.setUserName(hotelOrderVo.getUserName());
         hotelCheckInEntity.setPersonName(hotelOrderVo.getPersonName());
@@ -93,6 +111,14 @@ public class HotelCheckInServiceImpl extends ServiceImpl<HotelCheckInDao, HotelC
         });
         return;
     }
+
+    @Override
+    public PageUtils queryPage(Map<String, Object> params) {
+        IPage<HotelCheckInEntity> page = this.page(new Query<HotelCheckInEntity>().getPage(params), new QueryWrapper<HotelCheckInEntity>());
+        return new PageUtils(page);
+    }
+
+
 
     private List<Date> getBetweenDates(Date begin, Date end) {
         List<Date> result = new ArrayList<Date>();

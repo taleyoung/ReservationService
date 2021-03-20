@@ -34,6 +34,10 @@ public class HotelCheckInEntity implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
+    private String hotelRoomTypeName;
+
+    private String hotelName;
+
     private Integer hotelRoomId;
 
     private String hotelRoomNum;

@@ -4,7 +4,8 @@ public enum CheckInEnum {
     WAIT_PAYED(0,"待付款"),
     WAIT_CHECK_IN(1, "待入住"),
     SUCCESS_CHECK_IN(2,"成功入住"),
-    CHECK_OUT(3,"已离店");
+    CHECK_OUT(3,"已离店"),
+    CANCEL(4,"已取消");
 
     private Integer code;
     private String msg;

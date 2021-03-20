@@ -4,6 +4,7 @@ import com.ty.common.utils.PageUtils;
 import com.ty.room.entity.HotelEntity;
 import com.ty.room.vo.HotelWithRoomTypeVo;
 
+import java.util.Date;
 import java.util.Map;
 
 public interface HotelService {
@@ -17,5 +18,5 @@ public interface HotelService {
 
     HotelEntity getHotelById(Long id);
 
-    HotelWithRoomTypeVo getHotelWithRoomById(Long id);
+    HotelWithRoomTypeVo getHotelWithRoomById(Long id, Date date);
 }
