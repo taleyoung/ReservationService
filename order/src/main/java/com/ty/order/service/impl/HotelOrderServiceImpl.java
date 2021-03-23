@@ -19,7 +19,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.sql.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -84,5 +83,13 @@ public class HotelOrderServiceImpl extends ServiceImpl<HotelOrderDao, HotelOrder
         payVo.setSubject("xxxx");
         payVo.setTotal_amount("200");
         return payVo;
+    }
+
+    @Override
+    public void successPayed(Integer orderId) {
+        HotelOrderEntity orderEntity = this.getById(orderId);
+        orderEntity.setStatus(OrderStatusEnum.PAYED.getCode());
+        this.updateById(orderEntity);
+        hotelCheckInService.updateStatus(orderId, CheckInEnum.WAIT_CHECK_IN.getCode());
     }
 }

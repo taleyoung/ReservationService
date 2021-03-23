@@ -39,6 +39,12 @@ public class HotelOrderController {
         return ApiResp.retOK();
     }
 
+    @PostMapping("success-payed")
+    public ApiResp paySuccess(@RequestBody Integer orderId){
+        hotelOrderService.successPayed(orderId);
+        return ApiResp.retOK();
+    }
+
     @PutMapping("/{id}")
     public  ApiResp update(@RequestParam("id") String id, @RequestBody HotelOrderEntity hotelOrderEntity){
         hotelOrderService.updateOrder(hotelOrderEntity);

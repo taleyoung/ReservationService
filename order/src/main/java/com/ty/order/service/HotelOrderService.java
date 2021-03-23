@@ -25,4 +25,6 @@ public interface HotelOrderService extends IService<HotelOrderEntity> {
     void updateOrder(HotelOrderEntity hotelOrderEntity);
 
     PayVo getOrderPay(String orderSn);
+
+    void successPayed(Integer orderId);
 }

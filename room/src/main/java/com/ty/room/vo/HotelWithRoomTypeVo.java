@@ -3,7 +3,7 @@ package com.ty.room.vo;
 import com.ty.room.entity.HotelRoomTypeEntity;
 import lombok.Data;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.List;
 
 @Data

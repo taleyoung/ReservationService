@@ -36,10 +36,10 @@ public class HotelCheckInServiceImpl extends ServiceImpl<HotelCheckInDao, HotelC
 
     @Override
     public List<HotelCheckInEntity> getRecordsByTypeAndDate(Integer hotelRoomTypeId, Date date) {
-        java.sql.Date sqlDate = new java.sql.Date(date.getTime());
+//        java.sql.Date sqlDate = new java.sql.Date(date.getTime());
         QueryWrapper<HotelCheckInEntity> wrapper = new QueryWrapper<HotelCheckInEntity>()
                 .eq("hotel_room_type_id", hotelRoomTypeId)
-                .eq("date",sqlDate);
+                .eq("date",date);
         List<HotelCheckInEntity> list = this.list(wrapper);
         return list;
     }
@@ -82,6 +82,16 @@ public class HotelCheckInServiceImpl extends ServiceImpl<HotelCheckInDao, HotelC
         return freeHotelRooms.size();
     }
 
+    @Override
+    public void updateStatus(Integer orderId, Integer code) {
+        QueryWrapper<HotelCheckInEntity> wrapper = new QueryWrapper<HotelCheckInEntity>().eq("order_id", orderId);
+        List<HotelCheckInEntity> list = this.list(wrapper);
+        List<HotelCheckInEntity> collect = list.stream().map(item -> {
+            item.setStatus(code);
+            return item;
+        }).collect(Collectors.toList());
+        this.updateBatchById(collect);
+    }
 
 
     @Override

@@ -4,13 +4,10 @@ package com.ty.order.controller;
 import com.ty.common.utils.ApiResp;
 import com.ty.common.utils.PageUtils;
 import com.ty.order.service.HotelCheckInService;
+import com.ty.order.vo.CheckInStatusVo;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -42,6 +39,13 @@ public class HotelCheckInController {
         SimpleDateFormat sdf = new SimpleDateFormat( "yyyy-MM-dd" );
         Integer wareWithDate = hotelCheckInService.getWareWithDate(id, sdf.parse(date));
         return ApiResp.retOK(wareWithDate);
+    }
+
+    @PutMapping("/status")
+    public  ApiResp updateStatus(@RequestBody CheckInStatusVo vo){
+        hotelCheckInService.updateStatus(vo.getOrderId(), vo.getStatus());
+        return ApiResp.retOK();
+
     }
 
 }

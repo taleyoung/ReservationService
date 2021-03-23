@@ -1,10 +1,12 @@
 package com.ty.order.vo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
-import java.sql.Date;
 import java.sql.Time;
+import java.util.Date;
+
 
 @Data
 public class HotelOrderVo {
@@ -15,8 +17,10 @@ public class HotelOrderVo {
 
     private String hotelName;
 
+    @JsonFormat(locale="zh", timezone="GMT+8", pattern="yyyy-MM-dd")
     private Date startDate;
 
+    @JsonFormat(locale="zh", timezone="GMT+8", pattern="yyyy-MM-dd")
     private Date endDate;
 
     private Time expectedTime;
