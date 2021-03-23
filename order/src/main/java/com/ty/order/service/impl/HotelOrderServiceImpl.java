@@ -44,7 +44,7 @@ public class HotelOrderServiceImpl extends ServiceImpl<HotelOrderDao, HotelOrder
 
     @Transactional
     @Override
-    public void add(HotelOrderVo hotelOrderVo) {
+    public HotelOrderEntity add(HotelOrderVo hotelOrderVo) {
         HotelOrderEntity hotelOrderEntity = new HotelOrderEntity();
         //TODO 登记业务
         BeanUtils.copyProperties(hotelOrderVo, hotelOrderEntity);
@@ -53,12 +53,12 @@ public class HotelOrderServiceImpl extends ServiceImpl<HotelOrderDao, HotelOrder
 
         // 添加登记表
         hotelCheckInService.add(hotelOrderEntity.getId(), hotelOrderVo);
-        return;
-
         //TODO 去支付
+        return hotelOrderEntity;
     }
 
-    public void handlePayResult(boolean payResult, Long hotelOrderId){
+    @Override
+    public void handlePayResult(boolean payResult, Integer hotelOrderId){
         HotelOrderEntity orderEntity = this.getById(hotelOrderId);
         if(!payResult){
             orderEntity.setStatus(OrderStatusEnum.ERROR.getCode());
@@ -67,6 +67,7 @@ public class HotelOrderServiceImpl extends ServiceImpl<HotelOrderDao, HotelOrder
         //付款成功 更改状态
         orderEntity.setStatus(OrderStatusEnum.PAYED.getCode());
         this.updateById(orderEntity);
+        hotelCheckInService.updateStatus(hotelOrderId, CheckInEnum.WAIT_CHECK_IN.getCode());
 
     }
 
@@ -86,10 +87,8 @@ public class HotelOrderServiceImpl extends ServiceImpl<HotelOrderDao, HotelOrder
     }
 
     @Override
-    public void successPayed(Integer orderId) {
-        HotelOrderEntity orderEntity = this.getById(orderId);
-        orderEntity.setStatus(OrderStatusEnum.PAYED.getCode());
-        this.updateById(orderEntity);
-        hotelCheckInService.updateStatus(orderId, CheckInEnum.WAIT_CHECK_IN.getCode());
+    public void testPayAndSuccess(HotelOrderVo hotelOrderVo) {
+        HotelOrderEntity orderEntity = this.add(hotelOrderVo);
+        this.handlePayResult(true, orderEntity.getId());
     }
 }

@@ -3,6 +3,7 @@ package com.ty.room.controller;
 import com.ty.common.utils.ApiResp;
 import com.ty.common.utils.PageUtils;
 import com.ty.room.entity.HotelEntity;
+import com.ty.room.service.HotelRoomTypeService;
 import com.ty.room.service.HotelService;
 import com.ty.room.vo.HotelWithRoomTypeVo;
 import io.swagger.annotations.Api;
@@ -23,6 +24,9 @@ public class HotelController {
     @Autowired
     HotelService hotelService;
 
+    @Autowired
+    HotelRoomTypeService hotelRoomTypeService;
+
     @GetMapping("")
     @ApiOperation("获取酒店列表")
     public ApiResp<PageUtils> queryPage(@RequestParam(required = false) Map<String, Object> params){
@@ -36,6 +40,13 @@ public class HotelController {
         SimpleDateFormat sdf = new SimpleDateFormat( "yyyy-MM-dd" );
         HotelWithRoomTypeVo res = hotelService.getHotelWithRoomById(Long.valueOf(id), sdf.parse(date));
         return ApiResp.retOK(res);
+    }
+
+    @GetMapping("/{id}/hotel-room-type")
+    @ApiOperation("根据酒店id获得房间类型")
+    public ApiResp getRoomTypeByHotelId(@RequestParam(required = false) Map<String, Object> params, @PathVariable("id") Integer hotelId) {
+        PageUtils list = hotelRoomTypeService.queryPage(params, hotelId);
+        return ApiResp.retOK(list);
     }
 
     @PostMapping("")

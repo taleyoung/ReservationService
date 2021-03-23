@@ -20,9 +20,9 @@ public class HotelRoomTypeController {
     HotelRoomTypeService hotelRoomTypeService;
 
     @GetMapping("")
-    @ApiOperation("获取酒店房间类型列表")
-    public ApiResp<PageUtils> queryPage(@RequestParam(required = false) Map<String, Object> params){
-        PageUtils list = hotelRoomTypeService.queryPage(params);
+    @ApiOperation("获取某指定货酒店下的房间类型列表")
+    public ApiResp<PageUtils> queryPage(@RequestParam(required = false) Map<String, Object> params, @RequestParam("hotelId") Integer hoteLId){
+        PageUtils list = hotelRoomTypeService.queryPage(params, hoteLId);
         return ApiResp.retOK(list);
     }
     @PostMapping("")

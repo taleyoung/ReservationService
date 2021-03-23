@@ -39,9 +39,15 @@ public class HotelOrderController {
         return ApiResp.retOK();
     }
 
+    @PostMapping("/testPayAndSuccess")
+    public ApiResp testPayAndSuccess(@RequestBody HotelOrderVo hotelOrderVo){
+        hotelOrderService.testPayAndSuccess(hotelOrderVo);
+        return ApiResp.retOK();
+    }
+
     @PostMapping("success-payed")
     public ApiResp paySuccess(@RequestBody Integer orderId){
-        hotelOrderService.successPayed(orderId);
+        hotelOrderService.handlePayResult(true, orderId);
         return ApiResp.retOK();
     }
 

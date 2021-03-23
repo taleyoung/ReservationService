@@ -20,11 +20,13 @@ public interface HotelOrderService extends IService<HotelOrderEntity> {
 
     PageUtils queryPage(Map<String, Object> params);
 
-    void add(HotelOrderVo hotelOrderVo);
+    HotelOrderEntity add(HotelOrderVo hotelOrderVo);
 
     void updateOrder(HotelOrderEntity hotelOrderEntity);
 
     PayVo getOrderPay(String orderSn);
 
-    void successPayed(Integer orderId);
+    void handlePayResult(boolean payResult, Integer hotelOrderId);
+
+    void testPayAndSuccess(HotelOrderVo hotelOrderVo);
 }

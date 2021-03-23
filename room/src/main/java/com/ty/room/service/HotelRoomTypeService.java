@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 public interface HotelRoomTypeService {
-    PageUtils queryPage(Map<String, Object> params);
+    PageUtils queryPage(Map<String, Object> params, Integer hotelId);
 
     void add(HotelRoomTypeEntity hotelRoomTypeEntity);
 
