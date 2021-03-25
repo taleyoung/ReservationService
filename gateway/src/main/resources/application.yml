@@ -29,5 +29,12 @@ spring:
             - Path=/api/order/**
           filters:
             - RewritePath=/api/(?<segment>.*), /$\{segment}
+
+        - id: order_route
+          uri: lb://user
+          predicates:
+            - Path=/api/user/**
+          filters:
+            - RewritePath=/api/(?<segment>.*), /$\{segment}
   application:
     name: gateway

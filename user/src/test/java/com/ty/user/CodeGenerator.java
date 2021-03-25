@@ -1,9 +1,9 @@
-package com.ty.room;
+package com.ty.user;
 
+import com.baomidou.mybatisplus.core.exceptions.MybatisPlusException;
 import com.baomidou.mybatisplus.core.toolkit.StringPool;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.baomidou.mybatisplus.generator.AutoGenerator;
-import com.baomidou.mybatisplus.core.exceptions.MybatisPlusException;
 import com.baomidou.mybatisplus.generator.InjectionConfig;
 import com.baomidou.mybatisplus.generator.config.*;
 import com.baomidou.mybatisplus.generator.config.po.TableInfo;
@@ -42,7 +42,7 @@ public class CodeGenerator {
         // 全局配置
         GlobalConfig gc = new GlobalConfig();
         String projectPath = System.getProperty("user.dir");
-        gc.setOutputDir(projectPath+ "/room" + "/src/main/java");
+        gc.setOutputDir(projectPath+ "/user" + "/src/main/java");
         gc.setAuthor("taleyoung");
         gc.setOpen(false);
 //        实体属性 Swagger2 注解
@@ -61,8 +61,8 @@ public class CodeGenerator {
 
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://39.105.35.4:3306/reserve_room?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8");
-        // dsc.setSchemaName("public");
+        dsc.setUrl("jdbc:mysql://39.105.35.4:3306/reserve_admin?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8");
+        dsc.setSchemaName("public");
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
         dsc.setUsername("root");
         dsc.setPassword("root");
