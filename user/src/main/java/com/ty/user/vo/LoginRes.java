@@ -7,19 +7,6 @@ import lombok.Data;
 public class LoginRes {
     private String msg;
     private Boolean loginSuccess;
+    private String jwtToken;
     private UserEntity userInfo;
-
-    @Data
-    public static class UserInfo{
-        private String username;
-
-        private String email;
-
-        private String mobile;
-
-        private Integer role;
-
-        private Integer status;
-    }
-
 }

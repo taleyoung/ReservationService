@@ -8,6 +8,7 @@ import com.ty.user.entity.UserEntity;
 import com.ty.user.dao.UserDao;
 import com.ty.user.service.UserService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.ty.user.utils.JwtUtils;
 import com.ty.user.vo.LoginRes;
 import com.ty.user.vo.LoginVo;
 import org.apache.tomcat.util.buf.UEncoder;
@@ -15,6 +16,8 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 import java.util.Map;
 
@@ -70,11 +73,17 @@ public class UserServiceImpl extends ServiceImpl<UserDao, UserEntity> implements
             loginRes.setMsg("密码错误或用户名不存在");
             return loginRes;
         }
-//        LoginRes.UserInfo userInfo = loginRes.getUserInfo();
-//        BeanUtils.copyProperties(entity, userInfo);
+        JwtUtils jwtUtils = new JwtUtils();
+        String token = jwtUtils.getToken(entity);
+//        Cookie cookie = new Cookie("jwt",token);
+//        cookie.setPath("/");
+//        cookie.setMaxAge(1222);
+//        cookie.setDomain("localhost");
+//        response.addCookie(cookie);
         entity.setPassword(null);
         loginRes.setLoginSuccess(true);
         loginRes.setUserInfo(entity);
+        loginRes.setJwtToken(token);
         return loginRes;
 
     }
