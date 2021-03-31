@@ -1,0 +1,64 @@
+2021-03-29 00:56:23,687 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.1.103","key":"192.168.1.103:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-03-29 00:56:25,692 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.1.103","key":"192.168.1.103:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-03-29 02:57:10,505 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.1.103","key":"192.168.1.103:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-03-29 02:57:12,504 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.1.103","key":"192.168.1.103:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-03-29 04:58:06,510 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.1.103","key":"192.168.1.103:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-03-29 04:58:08,510 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.1.103","key":"192.168.1.103:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-03-29 06:58:52,496 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.1.103","key":"192.168.1.103:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-03-29 06:58:54,495 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.1.103","key":"192.168.1.103:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-03-29 08:59:37,387 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.1.103","key":"192.168.1.103:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-03-29 08:59:41,313 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.1.103","key":"192.168.1.103:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-03-29 09:58:20,264 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.1.103","key":"192.168.1.103:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-03-29 09:58:21,923 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.1.103","key":"192.168.1.103:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-03-29 11:29:19,454 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.1.103","key":"192.168.1.103:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-03-29 11:29:21,451 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.1.103","key":"192.168.1.103:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-03-29 11:37:40,331 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.1.103","key":"192.168.1.103:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-03-29 11:37:42,335 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.1.103","key":"192.168.1.103:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-03-29 18:58:37,701 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.1.103","key":"192.168.1.103:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-03-29 18:58:39,609 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.1.103","key":"192.168.1.103:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-03-29 19:15:51,716 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.1.103","key":"192.168.1.103:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-03-29 19:15:53,722 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.1.103","key":"192.168.1.103:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-03-29 19:29:04,113 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.1.103","key":"192.168.1.103:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-03-29 19:29:06,111 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.1.103","key":"192.168.1.103:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-03-29 19:30:20,854 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.1.103","key":"192.168.1.103:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-03-29 19:30:21,985 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.1.103","key":"192.168.1.103:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-03-29 20:09:58,207 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.1.103","key":"192.168.1.103:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-03-29 20:10:00,111 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.1.103","key":"192.168.1.103:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-03-29 20:27:20,090 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.1.103","key":"192.168.1.103:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-03-29 20:27:21,745 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.1.103","key":"192.168.1.103:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-03-29 20:30:13,917 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.1.103","key":"192.168.1.103:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-03-29 20:30:15,923 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.1.103","key":"192.168.1.103:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-03-29 23:14:10,075 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.1.103","key":"192.168.1.103:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-03-29 23:14:12,065 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.1.103","key":"192.168.1.103:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+

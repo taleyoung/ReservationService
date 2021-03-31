@@ -29,8 +29,14 @@ public class HotelCheckInController {
     HotelCheckInService hotelCheckInService;
 
     @GetMapping("")
-    public ApiResp queryPage(@RequestParam Map<String, Object> params){
-        PageUtils list = hotelCheckInService.queryPage(params);
+    public ApiResp queryPage(@RequestParam Map<String, Object> params, @RequestParam(value = "userId", required = false) Integer userId){
+        PageUtils list = null;
+        if(userId == null){
+             list = hotelCheckInService.queryPage(params);
+        }else{
+             list = hotelCheckInService.queryPageByUserId(params, userId);
+        }
+
         return ApiResp.retOK(list);
     }
 

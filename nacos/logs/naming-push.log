@@ -1,0 +1,338 @@
+2021-03-31 06:02:05,712 INFO DEFAULT_GROUP@@order is changed, add it to push queue.
+
+2021-03-31 06:02:08,890 INFO DEFAULT_GROUP@@user is changed, add it to push queue.
+
+2021-03-31 06:02:08,892 INFO DEFAULT_GROUP@@gateway is changed, add it to push queue.
+
+2021-03-31 06:02:08,892 INFO DEFAULT_GROUP@@room is changed, add it to push queue.
+
+2021-03-31 06:02:20,079 INFO DEFAULT_GROUP@@gateway is changed, add it to push queue.
+
+2021-03-31 06:02:22,145 INFO serviceName: DEFAULT_GROUP@@gateway changed, schedule push for: 127.0.0.1:53767, agent: Nacos-Java-Client:v1.4.1, key: 127.0.0.1,53767,1700620025573134
+
+2021-03-31 06:02:22,157 INFO send udp packet: 127.0.0.1,53767,1700620025573134
+
+2021-03-31 06:02:22,930 INFO DEFAULT_GROUP@@user is changed, add it to push queue.
+
+2021-03-31 06:02:22,931 INFO serviceName: DEFAULT_GROUP@@user changed, schedule push for: 127.0.0.1:53767, agent: Nacos-Java-Client:v1.4.1, key: 127.0.0.1,53767,1700622876840262
+
+2021-03-31 06:02:22,931 INFO send udp packet: 127.0.0.1,53767,1700622876840262
+
+2021-03-31 06:02:22,931 INFO serviceName: DEFAULT_GROUP@@user changed, schedule push for: 127.0.0.1:52794, agent: Nacos-Java-Client:v1.4.1, key: 127.0.0.1,52794,1700622876840262
+
+2021-03-31 06:02:22,931 INFO send udp packet: 127.0.0.1,52794,1700622876840262
+
+2021-03-31 06:02:22,931 INFO DEFAULT_GROUP@@room is changed, add it to push queue.
+
+2021-03-31 06:02:22,931 INFO serviceName: DEFAULT_GROUP@@room changed, schedule push for: 127.0.0.1:53767, agent: Nacos-Java-Client:v1.4.1, key: 127.0.0.1,53767,1700622877170269
+
+2021-03-31 06:02:22,931 INFO send udp packet: 127.0.0.1,53767,1700622877170269
+
+2021-03-31 06:02:22,931 INFO serviceName: DEFAULT_GROUP@@room changed, schedule push for: 127.0.0.1:57688, agent: Nacos-Java-Client:v1.4.1, key: 127.0.0.1,57688,1700622877170269
+
+2021-03-31 06:02:22,931 INFO send udp packet: 127.0.0.1,57688,1700622877170269
+
+2021-03-31 06:02:22,931 INFO DEFAULT_GROUP@@order is changed, add it to push queue.
+
+2021-03-31 06:02:22,931 INFO serviceName: DEFAULT_GROUP@@order changed, schedule push for: 127.0.0.1:57688, agent: Nacos-Java-Client:v1.4.1, key: 127.0.0.1,57688,1700622877341799
+
+2021-03-31 06:02:22,931 INFO send udp packet: 127.0.0.1,57688,1700622877341799
+
+2021-03-31 06:02:22,931 INFO serviceName: DEFAULT_GROUP@@order changed, schedule push for: 127.0.0.1:53767, agent: Nacos-Java-Client:v1.4.1, key: 127.0.0.1,53767,1700622877341799
+
+2021-03-31 06:02:22,931 INFO send udp packet: 127.0.0.1,53767,1700622877341799
+
+2021-03-31 06:02:30,998 INFO DEFAULT_GROUP@@room is changed, add it to push queue.
+
+2021-03-31 06:02:31,210 INFO serviceName: DEFAULT_GROUP@@room changed, schedule push for: 127.0.0.1:53767, agent: Nacos-Java-Client:v1.4.1, key: 127.0.0.1,53767,1700630944918690
+
+2021-03-31 06:02:31,210 INFO send udp packet: 127.0.0.1,53767,1700630944918690
+
+2021-03-31 06:02:31,210 INFO serviceName: DEFAULT_GROUP@@room changed, schedule push for: 127.0.0.1:57688, agent: Nacos-Java-Client:v1.4.1, key: 127.0.0.1,57688,1700630944918690
+
+2021-03-31 06:02:31,211 INFO send udp packet: 127.0.0.1,57688,1700630944918690
+
+2021-03-31 06:02:31,211 INFO DEFAULT_GROUP@@user is changed, add it to push queue.
+
+2021-03-31 06:02:31,211 INFO serviceName: DEFAULT_GROUP@@user changed, schedule push for: 127.0.0.1:53767, agent: Nacos-Java-Client:v1.4.1, key: 127.0.0.1,53767,1700631156877528
+
+2021-03-31 06:02:31,211 INFO send udp packet: 127.0.0.1,53767,1700631156877528
+
+2021-03-31 06:02:32,564 INFO received ack: {"type": "push-ack", "lastRefTime":"1700622877170269", "data":""} from: 127.0.0.1:57688, cost: 9633 ms, unacked: 9, total push: 24
+
+2021-03-31 06:02:32,936 INFO retry to push data, key: 127.0.0.1,53767,1700620025573134
+
+2021-03-31 06:02:37,475 INFO send udp packet: 127.0.0.1,53767,1700620025573134
+
+2021-03-31 06:02:39,025 INFO retry to push data, key: 127.0.0.1,53767,1700622876840262
+
+2021-03-31 06:02:39,025 INFO send udp packet: 127.0.0.1,53767,1700622876840262
+
+2021-03-31 06:02:41,093 INFO retry to push data, key: 127.0.0.1,52794,1700622876840262
+
+2021-03-31 06:02:47,896 WARN ack takes too long from /127.0.0.1:57688 ack json: {"type": "push-ack", "lastRefTime":"1700622877341799", "data":""}
+
+2021-03-31 06:02:47,896 INFO send udp packet: 127.0.0.1,52794,1700622876840262
+
+2021-03-31 06:02:49,264 INFO received ack: {"type": "push-ack", "lastRefTime":"1700622877341799", "data":""} from: 127.0.0.1:57688, cost: 26333 ms, unacked: 8, total push: 24
+
+2021-03-31 06:02:49,264 INFO retry to push data, key: 127.0.0.1,53767,1700622877170269
+
+2021-03-31 06:02:49,264 INFO send udp packet: 127.0.0.1,53767,1700622877170269
+
+2021-03-31 06:02:49,264 INFO retry to push data, key: 127.0.0.1,53767,1700622877341799
+
+2021-03-31 06:02:49,264 INFO send udp packet: 127.0.0.1,53767,1700622877341799
+
+2021-03-31 06:02:49,264 INFO retry to push data, key: 127.0.0.1,53767,1700630944918690
+
+2021-03-31 06:02:49,264 INFO send udp packet: 127.0.0.1,53767,1700630944918690
+
+2021-03-31 06:02:49,264 INFO retry to push data, key: 127.0.0.1,57688,1700630944918690
+
+2021-03-31 06:02:49,264 INFO send udp packet: 127.0.0.1,57688,1700630944918690
+
+2021-03-31 06:02:49,264 INFO retry to push data, key: 127.0.0.1,53767,1700631156877528
+
+2021-03-31 06:02:49,264 INFO send udp packet: 127.0.0.1,53767,1700631156877528
+
+2021-03-31 06:02:49,724 WARN ack takes too long from /127.0.0.1:52794 ack json: {"type": "push-ack", "lastRefTime":"1700622876840262", "data":""}
+
+2021-03-31 06:02:49,754 INFO received ack: {"type": "push-ack", "lastRefTime":"1700622876840262", "data":""} from: 127.0.0.1:52794, cost: 1858 ms, unacked: 7, total push: 24
+
+2021-03-31 06:02:49,754 INFO retry to push data, key: 127.0.0.1,53767,1700620025573134
+
+2021-03-31 06:02:49,754 WARN max re-push times reached, retry times 2, key: 127.0.0.1,53767,1700620025573134
+
+2021-03-31 06:02:50,404 WARN ack takes too long from /127.0.0.1:53767 ack json: {"type": "push-ack", "lastRefTime":"1700620025573134", "data":""}
+
+2021-03-31 06:02:51,243 INFO retry to push data, key: 127.0.0.1,53767,1700622876840262
+
+2021-03-31 06:02:50,501 INFO DEFAULT_GROUP@@gateway is changed, add it to push queue.
+
+2021-03-31 06:02:51,354 WARN max re-push times reached, retry times 2, key: 127.0.0.1,53767,1700622876840262
+
+2021-03-31 06:02:51,354 INFO serviceName: DEFAULT_GROUP@@gateway changed, schedule push for: 127.0.0.1:53767, agent: Nacos-Java-Client:v1.4.1, key: 127.0.0.1,53767,1700651300179367
+
+2021-03-31 06:02:51,354 INFO send udp packet: 127.0.0.1,53767,1700651300179367
+
+2021-03-31 06:02:53,244 ERROR [NACOS-PUSH] error while receiving ack data
+
+java.lang.IllegalStateException: unable to find ackEntry for key: 127.0.0.1,53767,1700620025573134, ack json: {"type": "push-ack", "lastRefTime":"1700620025573134", "data":""}
+	at com.alibaba.nacos.naming.push.PushService$Receiver.run(PushService.java:664)
+	at java.lang.Thread.run(Thread.java:748)
+2021-03-31 06:02:54,086 WARN ack takes too long from /127.0.0.1:53767 ack json: {"type": "push-ack", "lastRefTime":"1700622876840262", "data":""}
+
+2021-03-31 06:02:54,260 ERROR [NACOS-PUSH] error while receiving ack data
+
+java.lang.IllegalStateException: unable to find ackEntry for key: 127.0.0.1,53767,1700622876840262, ack json: {"type": "push-ack", "lastRefTime":"1700622876840262", "data":""}
+	at com.alibaba.nacos.naming.push.PushService$Receiver.run(PushService.java:664)
+	at java.lang.Thread.run(Thread.java:748)
+2021-03-31 06:02:56,586 WARN ack takes too long from /127.0.0.1:52794 ack json: {"type": "push-ack", "lastRefTime":"1700622876840262", "data":""}
+
+2021-03-31 06:02:56,586 ERROR [NACOS-PUSH] error while receiving ack data
+
+java.lang.IllegalStateException: unable to find ackEntry for key: 127.0.0.1,52794,1700622876840262, ack json: {"type": "push-ack", "lastRefTime":"1700622876840262", "data":""}
+	at com.alibaba.nacos.naming.push.PushService$Receiver.run(PushService.java:664)
+	at java.lang.Thread.run(Thread.java:748)
+2021-03-31 06:02:56,586 WARN ack takes too long from /127.0.0.1:53767 ack json: {"type": "push-ack", "lastRefTime":"1700622877170269", "data":""}
+
+2021-03-31 06:02:56,586 INFO received ack: {"type": "push-ack", "lastRefTime":"1700622877170269", "data":""} from: 127.0.0.1:53767, cost: 7322 ms, unacked: 5, total push: 25
+
+2021-03-31 06:02:57,152 WARN ack takes too long from /127.0.0.1:53767 ack json: {"type": "push-ack", "lastRefTime":"1700622877341799", "data":""}
+
+2021-03-31 06:02:57,153 INFO received ack: {"type": "push-ack", "lastRefTime":"1700622877341799", "data":""} from: 127.0.0.1:53767, cost: 7889 ms, unacked: 4, total push: 25
+
+2021-03-31 06:02:59,221 WARN ack takes too long from /127.0.0.1:57688 ack json: {"type": "push-ack", "lastRefTime":"1700630944918690", "data":""}
+
+2021-03-31 06:02:59,880 INFO received ack: {"type": "push-ack", "lastRefTime":"1700630944918690", "data":""} from: 127.0.0.1:57688, cost: 10616 ms, unacked: 3, total push: 25
+
+2021-03-31 06:02:59,880 WARN ack takes too long from /127.0.0.1:57688 ack json: {"type": "push-ack", "lastRefTime":"1700630944918690", "data":""}
+
+2021-03-31 06:02:59,266 INFO retry to push data, key: 127.0.0.1,53767,1700630944918690
+
+2021-03-31 06:02:59,881 WARN max re-push times reached, retry times 2, key: 127.0.0.1,53767,1700630944918690
+
+2021-03-31 06:02:59,881 INFO retry to push data, key: 127.0.0.1,53767,1700631156877528
+
+2021-03-31 06:02:59,881 WARN max re-push times reached, retry times 2, key: 127.0.0.1,53767,1700631156877528
+
+2021-03-31 06:02:59,881 ERROR [NACOS-PUSH] error while receiving ack data
+
+java.lang.IllegalStateException: unable to find ackEntry for key: 127.0.0.1,57688,1700630944918690, ack json: {"type": "push-ack", "lastRefTime":"1700630944918690", "data":""}
+	at com.alibaba.nacos.naming.push.PushService$Receiver.run(PushService.java:664)
+	at java.lang.Thread.run(Thread.java:748)
+2021-03-31 06:02:59,881 WARN ack takes too long from /127.0.0.1:53767 ack json: {"type": "push-ack", "lastRefTime":"1700630944918690", "data":""}
+
+2021-03-31 06:02:59,881 ERROR [NACOS-PUSH] error while receiving ack data
+
+java.lang.IllegalStateException: unable to find ackEntry for key: 127.0.0.1,53767,1700630944918690, ack json: {"type": "push-ack", "lastRefTime":"1700630944918690", "data":""}
+	at com.alibaba.nacos.naming.push.PushService$Receiver.run(PushService.java:664)
+	at java.lang.Thread.run(Thread.java:748)
+2021-03-31 06:03:01,354 INFO retry to push data, key: 127.0.0.1,53767,1700651300179367
+
+2021-03-31 06:03:01,355 INFO send udp packet: 127.0.0.1,53767,1700651300179367
+
+2021-03-31 06:03:03,688 WARN ack takes too long from /127.0.0.1:53767 ack json: {"type": "push-ack", "lastRefTime":"1700631156877528", "data":""}
+
+2021-03-31 06:03:03,688 ERROR [NACOS-PUSH] error while receiving ack data
+
+java.lang.IllegalStateException: unable to find ackEntry for key: 127.0.0.1,53767,1700631156877528, ack json: {"type": "push-ack", "lastRefTime":"1700631156877528", "data":""}
+	at com.alibaba.nacos.naming.push.PushService$Receiver.run(PushService.java:664)
+	at java.lang.Thread.run(Thread.java:748)
+2021-03-31 06:03:06,673 WARN ack takes too long from /127.0.0.1:53767 ack json: {"type": "push-ack", "lastRefTime":"1700620025573134", "data":""}
+
+2021-03-31 06:03:06,673 ERROR [NACOS-PUSH] error while receiving ack data
+
+java.lang.IllegalStateException: unable to find ackEntry for key: 127.0.0.1,53767,1700620025573134, ack json: {"type": "push-ack", "lastRefTime":"1700620025573134", "data":""}
+	at com.alibaba.nacos.naming.push.PushService$Receiver.run(PushService.java:664)
+	at java.lang.Thread.run(Thread.java:748)
+2021-03-31 06:03:11,480 INFO retry to push data, key: 127.0.0.1,53767,1700651300179367
+
+2021-03-31 06:03:12,849 WARN max re-push times reached, retry times 2, key: 127.0.0.1,53767,1700651300179367
+
+2021-03-31 06:03:13,817 WARN ack takes too long from /127.0.0.1:53767 ack json: {"type": "push-ack", "lastRefTime":"1700622876840262", "data":""}
+
+2021-03-31 06:03:13,817 ERROR [NACOS-PUSH] error while receiving ack data
+
+java.lang.IllegalStateException: unable to find ackEntry for key: 127.0.0.1,53767,1700622876840262, ack json: {"type": "push-ack", "lastRefTime":"1700622876840262", "data":""}
+	at com.alibaba.nacos.naming.push.PushService$Receiver.run(PushService.java:664)
+	at java.lang.Thread.run(Thread.java:748)
+2021-03-31 06:03:16,654 WARN ack takes too long from /127.0.0.1:53767 ack json: {"type": "push-ack", "lastRefTime":"1700622877170269", "data":""}
+
+2021-03-31 06:03:16,654 ERROR [NACOS-PUSH] error while receiving ack data
+
+java.lang.IllegalStateException: unable to find ackEntry for key: 127.0.0.1,53767,1700622877170269, ack json: {"type": "push-ack", "lastRefTime":"1700622877170269", "data":""}
+	at com.alibaba.nacos.naming.push.PushService$Receiver.run(PushService.java:664)
+	at java.lang.Thread.run(Thread.java:748)
+2021-03-31 06:03:18,688 WARN ack takes too long from /127.0.0.1:53767 ack json: {"type": "push-ack", "lastRefTime":"1700622877341799", "data":""}
+
+2021-03-31 06:03:18,688 ERROR [NACOS-PUSH] error while receiving ack data
+
+java.lang.IllegalStateException: unable to find ackEntry for key: 127.0.0.1,53767,1700622877341799, ack json: {"type": "push-ack", "lastRefTime":"1700622877341799", "data":""}
+	at com.alibaba.nacos.naming.push.PushService$Receiver.run(PushService.java:664)
+	at java.lang.Thread.run(Thread.java:748)
+2021-03-31 06:03:21,440 WARN ack takes too long from /127.0.0.1:53767 ack json: {"type": "push-ack", "lastRefTime":"1700630944918690", "data":""}
+
+2021-03-31 06:03:21,440 ERROR [NACOS-PUSH] error while receiving ack data
+
+java.lang.IllegalStateException: unable to find ackEntry for key: 127.0.0.1,53767,1700630944918690, ack json: {"type": "push-ack", "lastRefTime":"1700630944918690", "data":""}
+	at com.alibaba.nacos.naming.push.PushService$Receiver.run(PushService.java:664)
+	at java.lang.Thread.run(Thread.java:748)
+2021-03-31 06:03:21,983 WARN ack takes too long from /127.0.0.1:53767 ack json: {"type": "push-ack", "lastRefTime":"1700631156877528", "data":""}
+
+2021-03-31 06:03:21,983 ERROR [NACOS-PUSH] error while receiving ack data
+
+java.lang.IllegalStateException: unable to find ackEntry for key: 127.0.0.1,53767,1700631156877528, ack json: {"type": "push-ack", "lastRefTime":"1700631156877528", "data":""}
+	at com.alibaba.nacos.naming.push.PushService$Receiver.run(PushService.java:664)
+	at java.lang.Thread.run(Thread.java:748)
+2021-03-31 06:03:22,652 WARN ack takes too long from /127.0.0.1:53767 ack json: {"type": "push-ack", "lastRefTime":"1700651300179367", "data":""}
+
+2021-03-31 06:03:22,652 ERROR [NACOS-PUSH] error while receiving ack data
+
+java.lang.IllegalStateException: unable to find ackEntry for key: 127.0.0.1,53767,1700651300179367, ack json: {"type": "push-ack", "lastRefTime":"1700651300179367", "data":""}
+	at com.alibaba.nacos.naming.push.PushService$Receiver.run(PushService.java:664)
+	at java.lang.Thread.run(Thread.java:748)
+2021-03-31 06:03:25,885 WARN ack takes too long from /127.0.0.1:53767 ack json: {"type": "push-ack", "lastRefTime":"1700651300179367", "data":""}
+
+2021-03-31 06:03:25,885 ERROR [NACOS-PUSH] error while receiving ack data
+
+java.lang.IllegalStateException: unable to find ackEntry for key: 127.0.0.1,53767,1700651300179367, ack json: {"type": "push-ack", "lastRefTime":"1700651300179367", "data":""}
+	at com.alibaba.nacos.naming.push.PushService$Receiver.run(PushService.java:664)
+	at java.lang.Thread.run(Thread.java:748)
+2021-03-31 06:03:52,174 INFO DEFAULT_GROUP@@order is changed, add it to push queue.
+
+2021-03-31 06:03:52,175 INFO serviceName: DEFAULT_GROUP@@order changed, schedule push for: 127.0.0.1:56884, agent: Nacos-Java-Client:v1.4.1, key: 127.0.0.1,56884,1700712121120173
+
+2021-03-31 06:03:52,175 INFO send udp packet: 127.0.0.1,56884,1700712121120173
+
+2021-03-31 06:03:52,339 INFO received ack: {"type": "push-ack", "lastRefTime":"1700712121120173", "data":""} from: 127.0.0.1:56884, cost: 164 ms, unacked: 0, total push: 26
+
+2021-03-31 06:33:14,963 INFO DEFAULT_GROUP@@gateway is changed, add it to push queue.
+
+2021-03-31 06:33:14,964 INFO DEFAULT_GROUP@@room is changed, add it to push queue.
+
+2021-03-31 06:33:14,965 INFO serviceName: DEFAULT_GROUP@@room changed, schedule push for: 127.0.0.1:56884, agent: Nacos-Java-Client:v1.4.1, key: 127.0.0.1,56884,1701427583981748
+
+2021-03-31 06:33:14,965 INFO send udp packet: 127.0.0.1,56884,1701427583981748
+
+2021-03-31 06:33:14,965 INFO serviceName: DEFAULT_GROUP@@room changed, schedule push for: 127.0.0.1:57688, agent: Nacos-Java-Client:v1.4.1, key: 127.0.0.1,57688,1701427583981748
+
+2021-03-31 06:33:15,031 INFO send udp packet: 127.0.0.1,57688,1701427583981748
+
+2021-03-31 06:33:15,235 INFO DEFAULT_GROUP@@user is changed, add it to push queue.
+
+2021-03-31 06:33:15,235 INFO serviceName: DEFAULT_GROUP@@user changed, schedule push for: 127.0.0.1:52794, agent: Nacos-Java-Client:v1.4.1, key: 127.0.0.1,52794,1701427855090427
+
+2021-03-31 06:33:15,235 INFO send udp packet: 127.0.0.1,52794,1701427855090427
+
+2021-03-31 06:33:15,237 INFO DEFAULT_GROUP@@order is changed, add it to push queue.
+
+2021-03-31 06:33:15,238 INFO serviceName: DEFAULT_GROUP@@order changed, schedule push for: 127.0.0.1:56884, agent: Nacos-Java-Client:v1.4.1, key: 127.0.0.1,56884,1701427857621995
+
+2021-03-31 06:33:15,238 INFO send udp packet: 127.0.0.1,56884,1701427857621995
+
+2021-03-31 06:33:15,238 INFO serviceName: DEFAULT_GROUP@@order changed, schedule push for: 127.0.0.1:57688, agent: Nacos-Java-Client:v1.4.1, key: 127.0.0.1,57688,1701427857621995
+
+2021-03-31 06:33:15,238 INFO send udp packet: 127.0.0.1,57688,1701427857621995
+
+2021-03-31 06:33:15,238 INFO serviceName: DEFAULT_GROUP@@order changed, schedule push for: 127.0.0.1:53767, agent: Nacos-Java-Client:v1.4.1, key: 127.0.0.1,53767,1701427857621995
+
+2021-03-31 06:33:15,238 INFO send udp packet: 127.0.0.1,53767,1701427857621995
+
+2021-03-31 06:33:15,615 INFO received ack: {"type": "push-ack", "lastRefTime":"1701427855090427", "data":""} from: 127.0.0.1:52794, cost: 380 ms, unacked: 5, total push: 32
+
+2021-03-31 06:33:15,625 INFO received ack: {"type": "push-ack", "lastRefTime":"1701427583981748", "data":""} from: 127.0.0.1:56884, cost: 660 ms, unacked: 4, total push: 32
+
+2021-03-31 06:33:15,679 INFO received ack: {"type": "push-ack", "lastRefTime":"1701427857621995", "data":""} from: 127.0.0.1:56884, cost: 441 ms, unacked: 3, total push: 32
+
+2021-03-31 06:33:15,980 INFO received ack: {"type": "push-ack", "lastRefTime":"1701427857621995", "data":""} from: 127.0.0.1:53767, cost: 742 ms, unacked: 2, total push: 32
+
+2021-03-31 06:33:15,981 INFO received ack: {"type": "push-ack", "lastRefTime":"1701427583981748", "data":""} from: 127.0.0.1:57688, cost: 1015 ms, unacked: 1, total push: 32
+
+2021-03-31 06:33:15,987 INFO received ack: {"type": "push-ack", "lastRefTime":"1701427857621995", "data":""} from: 127.0.0.1:57688, cost: 749 ms, unacked: 0, total push: 32
+
+2021-03-31 06:33:20,241 INFO DEFAULT_GROUP@@gateway is changed, add it to push queue.
+
+2021-03-31 06:33:20,245 INFO DEFAULT_GROUP@@room is changed, add it to push queue.
+
+2021-03-31 06:33:20,245 INFO serviceName: DEFAULT_GROUP@@room changed, schedule push for: 127.0.0.1:56884, agent: Nacos-Java-Client:v1.4.1, key: 127.0.0.1,56884,1701432865568399
+
+2021-03-31 06:33:20,245 INFO send udp packet: 127.0.0.1,56884,1701432865568399
+
+2021-03-31 06:33:20,245 INFO serviceName: DEFAULT_GROUP@@room changed, schedule push for: 127.0.0.1:57688, agent: Nacos-Java-Client:v1.4.1, key: 127.0.0.1,57688,1701432865568399
+
+2021-03-31 06:33:20,246 INFO send udp packet: 127.0.0.1,57688,1701432865568399
+
+2021-03-31 06:33:20,247 INFO DEFAULT_GROUP@@order is changed, add it to push queue.
+
+2021-03-31 06:33:20,247 INFO serviceName: DEFAULT_GROUP@@order changed, schedule push for: 127.0.0.1:56884, agent: Nacos-Java-Client:v1.4.1, key: 127.0.0.1,56884,1701432867900317
+
+2021-03-31 06:33:20,247 INFO received ack: {"type": "push-ack", "lastRefTime":"1701432865568399", "data":""} from: 127.0.0.1:57688, cost: 1 ms, unacked: 1, total push: 34
+
+2021-03-31 06:33:20,248 INFO send udp packet: 127.0.0.1,56884,1701432867900317
+
+2021-03-31 06:33:20,248 INFO serviceName: DEFAULT_GROUP@@order changed, schedule push for: 127.0.0.1:57688, agent: Nacos-Java-Client:v1.4.1, key: 127.0.0.1,57688,1701432867900317
+
+2021-03-31 06:33:20,248 INFO send udp packet: 127.0.0.1,57688,1701432867900317
+
+2021-03-31 06:33:20,248 INFO serviceName: DEFAULT_GROUP@@order changed, schedule push for: 127.0.0.1:53767, agent: Nacos-Java-Client:v1.4.1, key: 127.0.0.1,53767,1701432867900317
+
+2021-03-31 06:33:20,248 INFO send udp packet: 127.0.0.1,53767,1701432867900317
+
+2021-03-31 06:33:20,249 INFO received ack: {"type": "push-ack", "lastRefTime":"1701432867900317", "data":""} from: 127.0.0.1:57688, cost: 1 ms, unacked: 3, total push: 37
+
+2021-03-31 06:33:20,343 INFO received ack: {"type": "push-ack", "lastRefTime":"1701432865568399", "data":""} from: 127.0.0.1:56884, cost: 98 ms, unacked: 2, total push: 37
+
+2021-03-31 06:33:20,350 INFO received ack: {"type": "push-ack", "lastRefTime":"1701432867900317", "data":""} from: 127.0.0.1:53767, cost: 102 ms, unacked: 1, total push: 37
+
+2021-03-31 06:33:20,351 INFO received ack: {"type": "push-ack", "lastRefTime":"1701432867900317", "data":""} from: 127.0.0.1:56884, cost: 103 ms, unacked: 0, total push: 37
+
+2021-03-31 06:33:20,458 INFO DEFAULT_GROUP@@user is changed, add it to push queue.
+
+2021-03-31 06:33:20,458 INFO serviceName: DEFAULT_GROUP@@user changed, schedule push for: 127.0.0.1:52794, agent: Nacos-Java-Client:v1.4.1, key: 127.0.0.1,52794,1701433078779759
+
+2021-03-31 06:33:20,459 INFO send udp packet: 127.0.0.1,52794,1701433078779759
+
+2021-03-31 06:33:20,520 INFO received ack: {"type": "push-ack", "lastRefTime":"1701433078779759", "data":""} from: 127.0.0.1:52794, cost: 61 ms, unacked: 0, total push: 38
+

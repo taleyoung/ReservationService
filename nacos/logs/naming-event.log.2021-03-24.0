@@ -1,0 +1,172 @@
+2021-03-24 12:43:53,680 INFO {POS} {IP-DISABLED} valid: 192.168.3.15:7000@DEFAULT@DEFAULT_GROUP@@room, region: unknown, msg: client timeout after 15000, last beat: 1616560615741
+
+2021-03-24 12:43:53,678 INFO {POS} {IP-DISABLED} valid: 192.168.3.15:8000@DEFAULT@DEFAULT_GROUP@@order, region: unknown, msg: client timeout after 15000, last beat: 1616560617693
+
+2021-03-24 12:43:53,680 INFO {POS} {IP-DISABLED} valid: 192.168.3.15:88@DEFAULT@DEFAULT_GROUP@@gateway, region: unknown, msg: client timeout after 15000, last beat: 1616560615815
+
+2021-03-24 12:43:54,093 INFO service: DEFAULT_GROUP@@room {POS} {IP-ENABLED} valid: 192.168.3.15:7000@DEFAULT, region: unknown, msg: client beat ok
+
+2021-03-24 12:43:54,160 INFO service: DEFAULT_GROUP@@gateway {POS} {IP-ENABLED} valid: 192.168.3.15:88@DEFAULT, region: unknown, msg: client beat ok
+
+2021-03-24 12:43:54,528 INFO DEFAULT_GROUP@@gateway {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.3.15:88:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-03-24 12:43:54,531 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@gateway, ips: 
+
+2021-03-24 12:43:54,538 INFO DEFAULT_GROUP@@room {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.3.15:7000:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-03-24 12:43:54,538 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@room, ips: 
+
+2021-03-24 12:43:54,538 INFO DEFAULT_GROUP@@order {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.3.15:8000:unknown:DEFAULT_1.0_false_false_DEFAULT]
+
+2021-03-24 12:43:54,538 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@order, ips: 
+
+2021-03-24 12:43:56,345 INFO DEFAULT_GROUP@@order {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.3.15:8000:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-03-24 12:43:56,347 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@order, ips: 192.168.3.15:8000_true,
+
+2021-03-24 12:43:59,232 INFO DEFAULT_GROUP@@room {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.3.15:7000:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-03-24 12:43:59,240 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@room, ips: 192.168.3.15:7000_true,
+
+2021-03-24 12:43:59,491 INFO DEFAULT_GROUP@@gateway {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.3.15:88:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-03-24 12:43:59,493 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@gateway, ips: 192.168.3.15:88_true,
+
+2021-03-24 13:44:52,826 INFO {POS} {IP-DISABLED} valid: 192.168.3.15:8000@DEFAULT@DEFAULT_GROUP@@order, region: unknown, msg: client timeout after 15000, last beat: 1616563791171
+
+2021-03-24 13:44:52,825 INFO {POS} {IP-DISABLED} valid: 192.168.3.15:7000@DEFAULT@DEFAULT_GROUP@@room, region: unknown, msg: client timeout after 15000, last beat: 1616563790708
+
+2021-03-24 13:44:52,824 INFO {POS} {IP-DISABLED} valid: 192.168.3.15:88@DEFAULT@DEFAULT_GROUP@@gateway, region: unknown, msg: client timeout after 15000, last beat: 1616563790705
+
+2021-03-24 13:44:53,201 INFO service: DEFAULT_GROUP@@room {POS} {IP-ENABLED} valid: 192.168.3.15:7000@DEFAULT, region: unknown, msg: client beat ok
+
+2021-03-24 13:44:53,207 INFO service: DEFAULT_GROUP@@order {POS} {IP-ENABLED} valid: 192.168.3.15:8000@DEFAULT, region: unknown, msg: client beat ok
+
+2021-03-24 13:44:53,209 INFO service: DEFAULT_GROUP@@gateway {POS} {IP-ENABLED} valid: 192.168.3.15:88@DEFAULT, region: unknown, msg: client beat ok
+
+2021-03-24 13:44:53,469 INFO DEFAULT_GROUP@@gateway {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.3.15:88:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-03-24 13:44:53,469 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@gateway, ips: 
+
+2021-03-24 13:44:58,280 INFO DEFAULT_GROUP@@gateway {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.3.15:88:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-03-24 13:44:58,281 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@gateway, ips: 192.168.3.15:88_true,
+
+2021-03-24 15:34:02,618 INFO DEFAULT_GROUP@@order {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.3.15:8000:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-03-24 15:34:02,624 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@order, ips: 
+
+2021-03-24 15:34:22,417 INFO DEFAULT_GROUP@@order {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.3.15:8000:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-03-24 15:34:22,419 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@order, ips: 192.168.3.15:8000_true,
+
+2021-03-24 19:03:35,438 INFO {POS} {IP-DISABLED} valid: 192.168.3.15:7000@DEFAULT@DEFAULT_GROUP@@room, region: unknown, msg: client timeout after 15000, last beat: 1616582521964
+
+2021-03-24 19:03:35,807 INFO {POS} {IP-DISABLED} valid: 192.168.3.15:8000@DEFAULT@DEFAULT_GROUP@@order, region: unknown, msg: client timeout after 15000, last beat: 1616582524984
+
+2021-03-24 19:03:35,439 INFO {POS} {IP-DISABLED} valid: 192.168.3.15:88@DEFAULT@DEFAULT_GROUP@@gateway, region: unknown, msg: client timeout after 15000, last beat: 1616582521958
+
+2021-03-24 19:03:35,818 INFO service: DEFAULT_GROUP@@gateway {POS} {IP-ENABLED} valid: 192.168.3.15:88@DEFAULT, region: unknown, msg: client beat ok
+
+2021-03-24 19:03:35,825 INFO service: DEFAULT_GROUP@@room {POS} {IP-ENABLED} valid: 192.168.3.15:7000@DEFAULT, region: unknown, msg: client beat ok
+
+2021-03-24 19:03:36,102 INFO DEFAULT_GROUP@@order {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.3.15:8000:unknown:DEFAULT_1.0_false_false_DEFAULT]
+
+2021-03-24 19:03:36,104 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@order, ips: 
+
+2021-03-24 19:03:37,775 INFO DEFAULT_GROUP@@order {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.3.15:8000:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-03-24 19:03:37,775 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@order, ips: 192.168.3.15:8000_true,
+
+2021-03-24 19:06:51,254 INFO DEFAULT_GROUP@@user {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.3.15:9000:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-03-24 19:06:51,258 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user, ips: 192.168.3.15:9000_true,
+
+2021-03-24 19:19:10,760 INFO {POS} {IP-DISABLED} valid: 192.168.3.15:8000@DEFAULT@DEFAULT_GROUP@@order, region: unknown, msg: client timeout after 15000, last beat: 1616584724881
+
+2021-03-24 19:19:10,762 INFO {POS} {IP-DISABLED} valid: 192.168.3.15:9000@DEFAULT@DEFAULT_GROUP@@user, region: unknown, msg: client timeout after 15000, last beat: 1616584723030
+
+2021-03-24 19:19:11,214 INFO service: DEFAULT_GROUP@@user {POS} {IP-ENABLED} valid: 192.168.3.15:9000@DEFAULT, region: unknown, msg: client beat ok
+
+2021-03-24 19:19:12,558 INFO service: DEFAULT_GROUP@@order {POS} {IP-ENABLED} valid: 192.168.3.15:8000@DEFAULT, region: unknown, msg: client beat ok
+
+2021-03-24 19:48:19,399 INFO DEFAULT_GROUP@@user {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.3.15:9000:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-03-24 19:48:19,407 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user, ips: 
+
+2021-03-24 19:52:12,696 INFO DEFAULT_GROUP@@user {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.3.15:9000:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-03-24 19:52:12,698 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user, ips: 192.168.3.15:9000_true,
+
+2021-03-24 20:03:21,098 INFO DEFAULT_GROUP@@user {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.3.15:9000:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-03-24 20:03:21,103 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user, ips: 
+
+2021-03-24 20:03:39,848 INFO DEFAULT_GROUP@@user {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.3.15:9000:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-03-24 20:03:39,848 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user, ips: 192.168.3.15:9000_true,
+
+2021-03-24 20:19:25,649 INFO {POS} {IP-DISABLED} valid: 192.168.3.15:8000@DEFAULT@DEFAULT_GROUP@@order, region: unknown, msg: client timeout after 15000, last beat: 1616588339627
+
+2021-03-24 20:19:25,648 INFO {POS} {IP-DISABLED} valid: 192.168.3.15:9000@DEFAULT@DEFAULT_GROUP@@user, region: unknown, msg: client timeout after 15000, last beat: 1616588342379
+
+2021-03-24 20:19:25,977 INFO service: DEFAULT_GROUP@@order {POS} {IP-ENABLED} valid: 192.168.3.15:8000@DEFAULT, region: unknown, msg: client beat ok
+
+2021-03-24 20:19:28,124 INFO service: DEFAULT_GROUP@@user {POS} {IP-ENABLED} valid: 192.168.3.15:9000@DEFAULT, region: unknown, msg: client beat ok
+
+2021-03-24 22:04:18,304 INFO DEFAULT_GROUP@@gateway {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.3.15:88:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-03-24 22:04:18,333 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@gateway, ips: 
+
+2021-03-24 22:04:40,050 INFO DEFAULT_GROUP@@gateway {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.3.15:88:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-03-24 22:04:40,051 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@gateway, ips: 192.168.3.15:88_true,
+
+2021-03-24 22:25:10,530 INFO DEFAULT_GROUP@@user {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.3.15:9000:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-03-24 22:25:10,532 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user, ips: 
+
+2021-03-24 22:25:33,204 INFO DEFAULT_GROUP@@user {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.3.15:9000:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-03-24 22:25:33,206 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user, ips: 192.168.3.15:9000_true,
+
+2021-03-24 22:41:04,831 INFO DEFAULT_GROUP@@user {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.3.15:9000:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-03-24 22:41:04,835 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user, ips: 
+
+2021-03-24 22:41:36,418 INFO DEFAULT_GROUP@@user {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.3.15:9000:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-03-24 22:41:36,419 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user, ips: 192.168.3.15:9000_true,
+
+2021-03-24 22:45:04,863 INFO DEFAULT_GROUP@@user {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.3.15:9000:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-03-24 22:45:04,863 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user, ips: 
+
+2021-03-24 22:45:26,135 INFO DEFAULT_GROUP@@user {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.3.15:9000:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-03-24 22:45:26,141 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user, ips: 192.168.3.15:9000_true,
+
+2021-03-24 22:57:49,969 INFO DEFAULT_GROUP@@user {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.3.15:9000:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-03-24 22:57:49,972 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user, ips: 
+
+2021-03-24 22:58:08,128 INFO DEFAULT_GROUP@@user {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.3.15:9000:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-03-24 22:58:08,128 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user, ips: 192.168.3.15:9000_true,
+
+2021-03-24 22:59:01,257 INFO DEFAULT_GROUP@@user {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.3.15:9000:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-03-24 22:59:01,258 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user, ips: 
+
+2021-03-24 22:59:16,031 INFO DEFAULT_GROUP@@user {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.3.15:9000:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-03-24 22:59:16,031 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user, ips: 192.168.3.15:9000_true,
+
+2021-03-24 22:59:50,774 INFO DEFAULT_GROUP@@user {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.3.15:9000:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-03-24 22:59:50,774 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user, ips: 
+
+2021-03-24 23:00:06,806 INFO DEFAULT_GROUP@@user {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.3.15:9000:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-03-24 23:00:06,806 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user, ips: 192.168.3.15:9000_true,
+

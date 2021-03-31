@@ -1,0 +1,82 @@
+2021-03-28 00:32:30,641 INFO {POS} {IP-DISABLED} valid: 192.168.3.15:88@DEFAULT@DEFAULT_GROUP@@gateway, region: unknown, msg: client timeout after 15000, last beat: 1616860868721
+
+2021-03-28 00:32:30,637 INFO {POS} {IP-DISABLED} valid: 192.168.3.15:7000@DEFAULT@DEFAULT_GROUP@@room, region: unknown, msg: client timeout after 15000, last beat: 1616860871421
+
+2021-03-28 00:32:30,639 INFO {POS} {IP-DISABLED} valid: 192.168.3.15:8000@DEFAULT@DEFAULT_GROUP@@order, region: unknown, msg: client timeout after 15000, last beat: 1616860871263
+
+2021-03-28 00:32:30,641 INFO {POS} {IP-DISABLED} valid: 192.168.3.15:9000@DEFAULT@DEFAULT_GROUP@@user, region: unknown, msg: client timeout after 15000, last beat: 1616860871809
+
+2021-03-28 00:32:31,541 INFO service: DEFAULT_GROUP@@gateway {POS} {IP-ENABLED} valid: 192.168.3.15:88@DEFAULT, region: unknown, msg: client beat ok
+
+2021-03-28 00:32:31,610 INFO DEFAULT_GROUP@@order {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.3.15:8000:unknown:DEFAULT_1.0_false_false_DEFAULT]
+
+2021-03-28 00:32:31,610 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@order, ips: 
+
+2021-03-28 00:32:31,612 INFO DEFAULT_GROUP@@room {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.3.15:7000:unknown:DEFAULT_1.0_false_false_DEFAULT]
+
+2021-03-28 00:32:31,612 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@room, ips: 
+
+2021-03-28 00:32:31,612 INFO DEFAULT_GROUP@@user {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.3.15:9000:unknown:DEFAULT_1.0_false_false_DEFAULT]
+
+2021-03-28 00:32:31,612 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user, ips: 
+
+2021-03-28 00:32:31,612 INFO DEFAULT_GROUP@@gateway {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.3.15:88:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-03-28 00:32:31,612 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@gateway, ips: 
+
+2021-03-28 00:32:32,215 INFO DEFAULT_GROUP@@order {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.3.15:8000:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-03-28 00:32:32,217 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@order, ips: 192.168.3.15:8000_true,
+
+2021-03-28 00:32:32,407 INFO DEFAULT_GROUP@@room {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.3.15:7000:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-03-28 00:32:32,407 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@room, ips: 192.168.3.15:7000_true,
+
+2021-03-28 00:32:32,715 INFO DEFAULT_GROUP@@user {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.3.15:9000:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-03-28 00:32:32,715 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user, ips: 192.168.3.15:9000_true,
+
+2021-03-28 00:32:36,488 INFO DEFAULT_GROUP@@gateway {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.3.15:88:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-03-28 00:32:36,488 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@gateway, ips: 192.168.3.15:88_true,
+
+2021-03-28 03:17:22,660 INFO {POS} {IP-DISABLED} valid: 192.168.3.15:88@DEFAULT@DEFAULT_GROUP@@gateway, region: unknown, msg: client timeout after 15000, last beat: 1616872357164
+
+2021-03-28 03:17:22,664 INFO {POS} {IP-DISABLED} valid: 192.168.3.15:7000@DEFAULT@DEFAULT_GROUP@@room, region: unknown, msg: client timeout after 15000, last beat: 1616872356912
+
+2021-03-28 03:17:22,664 INFO {POS} {IP-DISABLED} valid: 192.168.3.15:9000@DEFAULT@DEFAULT_GROUP@@user, region: unknown, msg: client timeout after 15000, last beat: 1616872356914
+
+2021-03-28 03:17:22,662 INFO {POS} {IP-DISABLED} valid: 192.168.3.15:8000@DEFAULT@DEFAULT_GROUP@@order, region: unknown, msg: client timeout after 15000, last beat: 1616872357170
+
+2021-03-28 03:17:23,442 INFO DEFAULT_GROUP@@gateway {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.3.15:88:unknown:DEFAULT_1.0_false_false_DEFAULT]
+
+2021-03-28 03:17:23,442 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@gateway, ips: 
+
+2021-03-28 03:17:23,445 INFO DEFAULT_GROUP@@order {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.3.15:8000:unknown:DEFAULT_1.0_false_false_DEFAULT]
+
+2021-03-28 03:17:23,445 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@order, ips: 
+
+2021-03-28 03:17:23,445 INFO DEFAULT_GROUP@@user {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.3.15:9000:unknown:DEFAULT_1.0_false_false_DEFAULT]
+
+2021-03-28 03:17:23,445 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user, ips: 
+
+2021-03-28 03:17:23,450 INFO DEFAULT_GROUP@@room {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.3.15:7000:unknown:DEFAULT_1.0_false_false_DEFAULT]
+
+2021-03-28 03:17:23,450 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@room, ips: 
+
+2021-03-28 03:17:23,636 INFO DEFAULT_GROUP@@room {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.3.15:7000:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-03-28 03:17:23,636 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@room, ips: 192.168.3.15:7000_true,
+
+2021-03-28 03:17:23,641 INFO DEFAULT_GROUP@@user {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.3.15:9000:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-03-28 03:17:23,641 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user, ips: 192.168.3.15:9000_true,
+
+2021-03-28 03:17:23,900 INFO DEFAULT_GROUP@@gateway {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.3.15:88:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-03-28 03:17:23,900 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@gateway, ips: 192.168.3.15:88_true,
+
+2021-03-28 03:17:23,902 INFO DEFAULT_GROUP@@order {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.3.15:8000:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-03-28 03:17:23,902 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@order, ips: 192.168.3.15:8000_true,
+

@@ -1,0 +1,16 @@
+2021-03-29 11:29:19,174 INFO {POS} {IP-DISABLED} valid: 192.168.3.15:9000@DEFAULT@DEFAULT_GROUP@@user, region: unknown, msg: client timeout after 15000, last beat: 1616988530057
+
+2021-03-29 11:29:19,090 INFO {POS} {IP-DISABLED} valid: 192.168.3.15:7000@DEFAULT@DEFAULT_GROUP@@room, region: unknown, msg: client timeout after 15000, last beat: 1616988530023
+
+2021-03-29 11:29:19,091 INFO {POS} {IP-DISABLED} valid: 192.168.3.15:88@DEFAULT@DEFAULT_GROUP@@gateway, region: unknown, msg: client timeout after 15000, last beat: 1616988531103
+
+2021-03-29 11:29:19,090 INFO {POS} {IP-DISABLED} valid: 192.168.3.15:8000@DEFAULT@DEFAULT_GROUP@@order, region: unknown, msg: client timeout after 15000, last beat: 1616988529719
+
+2021-03-29 11:29:19,457 INFO service: DEFAULT_GROUP@@user {POS} {IP-ENABLED} valid: 192.168.3.15:9000@DEFAULT, region: unknown, msg: client beat ok
+
+2021-03-29 11:29:19,457 INFO service: DEFAULT_GROUP@@room {POS} {IP-ENABLED} valid: 192.168.3.15:7000@DEFAULT, region: unknown, msg: client beat ok
+
+2021-03-29 11:29:19,457 INFO service: DEFAULT_GROUP@@order {POS} {IP-ENABLED} valid: 192.168.3.15:8000@DEFAULT, region: unknown, msg: client beat ok
+
+2021-03-29 11:29:19,778 INFO service: DEFAULT_GROUP@@gateway {POS} {IP-ENABLED} valid: 192.168.3.15:88@DEFAULT, region: unknown, msg: client beat ok
+

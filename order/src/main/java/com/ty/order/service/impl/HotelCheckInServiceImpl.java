@@ -94,6 +94,8 @@ public class HotelCheckInServiceImpl extends ServiceImpl<HotelCheckInDao, HotelC
     }
 
 
+
+
     @Override
     public void add(Integer orderId, HotelOrderVo hotelOrderVo) {
         Integer hotelRoomTypeId = hotelOrderVo.getHotelRoomTypeId();
@@ -124,7 +126,17 @@ public class HotelCheckInServiceImpl extends ServiceImpl<HotelCheckInDao, HotelC
 
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
-        IPage<HotelCheckInEntity> page = this.page(new Query<HotelCheckInEntity>().getPage(params), new QueryWrapper<HotelCheckInEntity>());
+        IPage<HotelCheckInEntity> page = this.page(
+                new Query<HotelCheckInEntity>().getPage(params),
+                new QueryWrapper<HotelCheckInEntity>().orderByDesc("date"));
+        return new PageUtils(page);
+    }
+
+    @Override
+    public PageUtils queryPageByUserId(Map<String, Object> params, Integer userId) {
+        IPage<HotelCheckInEntity> page = this.page(
+                new Query<HotelCheckInEntity>().getPage(params),
+                new QueryWrapper<HotelCheckInEntity>().eq("user_id",userId).orderByDesc("date"));
         return new PageUtils(page);
     }
 

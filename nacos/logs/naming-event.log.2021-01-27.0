@@ -1,0 +1,30 @@
+2021-01-27 13:10:40,874 INFO {POS} {IP-DISABLED} valid: 192.168.1.102:10000@DEFAULT@DEFAULT_GROUP@@gulimall-product, region: unknown, msg: client timeout after 15000, last beat: 1611723953130
+
+2021-01-27 13:10:40,874 INFO {POS} {IP-DISABLED} valid: 192.168.1.102:8080@DEFAULT@DEFAULT_GROUP@@renren-fast, region: unknown, msg: client timeout after 15000, last beat: 1611723956321
+
+2021-01-27 13:10:40,874 INFO {POS} {IP-DISABLED} valid: 192.168.1.102:88@DEFAULT@DEFAULT_GROUP@@gulimall-gateway, region: unknown, msg: client timeout after 15000, last beat: 1611723953026
+
+2021-01-27 13:10:40,904 INFO service: DEFAULT_GROUP@@gulimall-gateway {POS} {IP-ENABLED} valid: 192.168.1.102:88@DEFAULT, region: unknown, msg: client beat ok
+
+2021-01-27 13:10:41,025 INFO service: DEFAULT_GROUP@@gulimall-product {POS} {IP-ENABLED} valid: 192.168.1.102:10000@DEFAULT, region: unknown, msg: client beat ok
+
+2021-01-27 13:10:41,346 INFO DEFAULT_GROUP@@renren-fast {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.1.102:8080:unknown:DEFAULT_1.0_false_false_DEFAULT]
+
+2021-01-27 13:10:41,347 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@renren-fast, ips: 
+
+2021-01-27 13:10:43,108 INFO DEFAULT_GROUP@@renren-fast {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.1.102:8080:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-01-27 13:10:43,108 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@renren-fast, ips: 192.168.1.102:8080_true,
+
+2021-01-27 14:48:28,742 INFO {POS} {IP-DISABLED} valid: 192.168.1.102:8080@DEFAULT@DEFAULT_GROUP@@renren-fast, region: unknown, msg: client timeout after 15000, last beat: 1611730082405
+
+2021-01-27 14:48:28,742 INFO {POS} {IP-DISABLED} valid: 192.168.1.102:10000@DEFAULT@DEFAULT_GROUP@@gulimall-product, region: unknown, msg: client timeout after 15000, last beat: 1611730083122
+
+2021-01-27 14:48:29,025 INFO {POS} {IP-DISABLED} valid: 192.168.1.102:88@DEFAULT@DEFAULT_GROUP@@gulimall-gateway, region: unknown, msg: client timeout after 15000, last beat: 1611730082755
+
+2021-01-27 14:48:29,495 INFO service: DEFAULT_GROUP@@renren-fast {POS} {IP-ENABLED} valid: 192.168.1.102:8080@DEFAULT, region: unknown, msg: client beat ok
+
+2021-01-27 14:48:29,833 INFO service: DEFAULT_GROUP@@gulimall-gateway {POS} {IP-ENABLED} valid: 192.168.1.102:88@DEFAULT, region: unknown, msg: client beat ok
+
+2021-01-27 14:48:30,201 INFO service: DEFAULT_GROUP@@gulimall-product {POS} {IP-ENABLED} valid: 192.168.1.102:10000@DEFAULT, region: unknown, msg: client beat ok
+

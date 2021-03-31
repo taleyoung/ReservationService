@@ -31,4 +31,6 @@ public interface HotelCheckInService extends IService<HotelCheckInEntity> {
     Integer getWareWithDate(Integer hotelRoomTypeId, Date date);
 
     void updateStatus(Integer orderId, Integer code);
+
+    PageUtils queryPageByUserId(Map<String, Object> params, Integer userId);
 }

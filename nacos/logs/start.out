@@ -1,0 +1,57 @@
+/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/bin/java  -Xms512m -Xmx512m -Xmn256m -Dnacos.standalone=true -Djava.ext.dirs=/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/ext:/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/lib/ext -Xloggc:/Users/taleyoung/Documents/开发/MY-PROJECT/ReservationService/nacos/logs/nacos_gc.log -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintGCTimeStamps -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=10 -XX:GCLogFileSize=100M -Dloader.path=/Users/taleyoung/Documents/开发/MY-PROJECT/ReservationService/nacos/plugins/health,/Users/taleyoung/Documents/开发/MY-PROJECT/ReservationService/nacos/plugins/cmdb,/Users/taleyoung/Documents/开发/MY-PROJECT/ReservationService/nacos/plugins/mysql -Dnacos.home=/Users/taleyoung/Documents/开发/MY-PROJECT/ReservationService/nacos -jar /Users/taleyoung/Documents/开发/MY-PROJECT/ReservationService/nacos/target/nacos-server.jar  --spring.config.location=classpath:/,classpath:/config/,file:./,file:./config/,file:/Users/taleyoung/Documents/开发/MY-PROJECT/ReservationService/nacos/conf/ --logging.config=/Users/taleyoung/Documents/开发/MY-PROJECT/ReservationService/nacos/conf/nacos-logback.xml --server.max-http-header-size=524288
+
+         ,--.
+       ,--.'|
+   ,--,:  : |                                           Nacos 1.2.1
+,`--.'`|  ' :                       ,---.               Running in stand alone mode, All function modules
+|   :  :  | |                      '   ,'\   .--.--.    Port: 8848
+:   |   \ | :  ,--.--.     ,---.  /   /   | /  /    '   Pid: 10506
+|   : '  '; | /       \   /     \.   ; ,. :|  :  /`./   Console: http://192.168.3.15:8848/nacos/index.html
+'   ' ;.    ;.--.  .-. | /    / ''   | |: :|  :  ;_
+|   | | \   | \__\/: . ..    ' / '   | .; : \  \    `.      https://nacos.io
+'   : |  ; .' ," .--.; |'   ; :__|   :    |  `----.   \
+|   | '`--'  /  /  ,.  |'   | '.'|\   \  /  /  /`--'  /
+'   : |     ;  :   .'   \   :    : `----'  '--'.     /
+;   |.'     |  ,     .-./\   \  /            `--'---'
+'---'        `--`---'     `----'
+
+2021-03-31 15:27:41,009 INFO Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$229689ff] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+2021-03-31 15:27:41,138 INFO Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+2021-03-31 15:27:41,142 INFO Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@17bffc17' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+2021-03-31 15:27:41,145 INFO Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$476b2cb1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+2021-03-31 15:27:41,154 INFO Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+2021-03-31 15:27:41,753 INFO Tomcat initialized with port(s): 8848 (http)
+
+2021-03-31 15:27:41,928 INFO Root WebApplicationContext: initialization completed in 3234 ms
+
+2021-03-31 15:27:45,637 INFO Initializing ExecutorService 'applicationTaskExecutor'
+
+2021-03-31 15:27:45,887 INFO Adding welcome page: class path resource [static/index.html]
+
+2021-03-31 15:27:46,394 INFO Creating filter chain: Ant [pattern='/**'], []
+
+2021-03-31 15:27:46,465 INFO Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1bb1fde8, org.springframework.security.web.context.SecurityContextPersistenceFilter@6bb75258, org.springframework.security.web.header.HeaderWriterFilter@2b43529a, org.springframework.security.web.csrf.CsrfFilter@1623134f, org.springframework.security.web.authentication.logout.LogoutFilter@3829ac1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@75e01201, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4a335fa8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@15eebbff, org.springframework.security.web.session.SessionManagementFilter@5b04476e, org.springframework.security.web.access.ExceptionTranslationFilter@485a3466]
+
+2021-03-31 15:27:46,614 INFO Exposing 2 endpoint(s) beneath base path '/actuator'
+
+2021-03-31 15:27:46,654 INFO Initializing ExecutorService 'taskScheduler'
+
+2021-03-31 15:27:46,804 INFO Tomcat started on port(s): 8848 (http) with context path '/nacos'
+
+2021-03-31 15:27:46,812 INFO Nacos logs files: /Users/taleyoung/Documents/开发/MY-PROJECT/ReservationService/nacos/logs/
+
+2021-03-31 15:27:46,812 INFO Nacos conf files: /Users/taleyoung/Documents/开发/MY-PROJECT/ReservationService/nacos/conf/
+
+2021-03-31 15:27:46,813 INFO Nacos data files: /Users/taleyoung/Documents/开发/MY-PROJECT/ReservationService/nacos/data/
+
+2021-03-31 15:27:46,813 INFO Nacos started successfully in stand alone mode.
+
+2021-03-31 15:27:46,977 INFO Initializing Servlet 'dispatcherServlet'
+
+2021-03-31 15:27:46,993 INFO Completed initialization in 16 ms
+

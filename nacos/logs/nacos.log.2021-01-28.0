@@ -1,0 +1,606 @@
+2021-01-28 00:10:19,405 INFO listen config id:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 00:10:19,411 INFO listen config id 2:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 01:42:58,795 INFO listen config id:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 01:42:58,797 INFO listen config id 2:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 01:43:11,631 INFO listen config id:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 01:43:11,631 INFO listen config id 2:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 01:43:11,910 INFO [capacityManagement] start correct usage
+
+2021-01-28 01:43:11,923 INFO [capacityManagement] end correct usage, cost: 0s
+
+2021-01-28 01:43:20,635 WARN clearConfigHistory start
+
+2021-01-28 01:43:20,655 WARN clearConfigHistory, getBeforeStamp:2020-12-29 01:43:20.0, totalCount:6, pageSize:1000, removeTime:1
+
+2021-01-28 01:43:20,688 ERROR clearConfigHistory error
+
+org.springframework.jdbc.UncategorizedSQLException: PreparedStatementCallback; uncategorized SQLException for SQL [delete from his_config_info where gmt_modified < ? OFFSET 0 ROWS FETCH NEXT ? ROWS ONLY]; SQL state [null]; error code [0]; Borrow prepareStatement from pool failed; nested exception is org.apache.commons.dbcp.SQLNestedException: Borrow prepareStatement from pool failed
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:89)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:81)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:81)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1444)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:632)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:862)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:917)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:927)
+	at com.alibaba.nacos.config.server.utils.PaginationHelper.updateLimit(PaginationHelper.java:208)
+	at com.alibaba.nacos.config.server.service.PersistService.removeConfigHistory(PersistService.java:941)
+	at com.alibaba.nacos.config.server.service.PersistService$$FastClassBySpringCGLIB$$21ae4232.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at com.alibaba.nacos.config.server.service.PersistService$$EnhancerBySpringCGLIB$$a864cbcf.removeConfigHistory(<generated>)
+	at com.alibaba.nacos.config.server.service.dump.DumpService.lambda$init$2(DumpService.java:100)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.commons.dbcp.SQLNestedException: Borrow prepareStatement from pool failed
+	at org.apache.commons.dbcp.PoolingConnection.prepareStatement(PoolingConnection.java:113)
+	at org.apache.commons.dbcp.DelegatingConnection.prepareStatement(DelegatingConnection.java:281)
+	at org.apache.commons.dbcp.PoolingDataSource$PoolGuardConnectionWrapper.prepareStatement(PoolingDataSource.java:313)
+	at org.springframework.jdbc.core.JdbcTemplate$SimplePreparedStatementCreator.createPreparedStatement(JdbcTemplate.java:1557)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:615)
+	... 21 common frames omitted
+Caused by: java.sql.SQLSyntaxErrorException: Syntax error: Encountered "OFFSET" at line 1, column 52.
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory40.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.TransactionResourceImpl.wrapInSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.TransactionResourceImpl.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.ConnectionChild.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedPreparedStatement.<init>(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedPreparedStatement20.<init>(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedPreparedStatement30.<init>(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedPreparedStatement40.<init>(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedPreparedStatement42.<init>(Unknown Source)
+	at org.apache.derby.jdbc.Driver42.newEmbedPreparedStatement(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.prepareStatement(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.prepareStatement(Unknown Source)
+	at org.apache.commons.dbcp.PoolingConnection.makeObject(PoolingConnection.java:285)
+	at org.apache.commons.pool.impl.GenericKeyedObjectPool.borrowObject(GenericKeyedObjectPool.java:1220)
+	at org.apache.commons.dbcp.PoolingConnection.prepareStatement(PoolingConnection.java:107)
+	... 25 common frames omitted
+Caused by: org.apache.derby.impl.jdbc.EmbedSQLException: Syntax error: Encountered "OFFSET" at line 1, column 52.
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory40.wrapArgsForTransportAcrossDRDA(Unknown Source)
+	... 42 common frames omitted
+Caused by: org.apache.derby.iapi.error.StandardException: Syntax error: Encountered "OFFSET" at line 1, column 52.
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.impl.sql.compile.ParserImpl.parseStatement(Unknown Source)
+	at org.apache.derby.impl.sql.GenericStatement.prepMinion(Unknown Source)
+	at org.apache.derby.impl.sql.GenericStatement.prepare(Unknown Source)
+	at org.apache.derby.impl.sql.conn.GenericLanguageConnectionContext.prepareInternalStatement(Unknown Source)
+	... 36 common frames omitted
+2021-01-28 01:43:28,224 INFO listen config id:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 01:43:28,224 INFO listen config id 2:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 03:31:05,500 INFO listen config id:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 03:31:05,501 INFO listen config id 2:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 03:31:22,154 INFO listen config id:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 03:31:22,156 INFO listen config id 2:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 03:31:35,016 INFO listen config id:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 03:31:35,016 INFO listen config id 2:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 05:19:15,223 INFO listen config id:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 05:19:15,224 INFO listen config id 2:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 05:19:28,084 INFO listen config id:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 05:19:28,084 INFO listen config id 2:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 05:19:44,730 INFO listen config id:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 05:19:44,730 INFO listen config id 2:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 05:19:57,591 INFO listen config id:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 05:19:57,592 INFO listen config id 2:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 07:07:31,695 INFO listen config id:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 07:07:31,696 INFO listen config id 2:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 08:30:07,987 INFO listen config id:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 08:30:07,989 INFO listen config id 2:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 10:11:21,636 INFO listen config id:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 10:11:21,636 INFO listen config id 2:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 11:53:59,626 INFO listen config id:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 11:53:59,626 INFO listen config id 2:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 11:54:10,980 INFO listen config id:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 11:54:10,981 INFO listen config id 2:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 11:54:29,080 INFO listen config id:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 11:54:29,080 INFO listen config id 2:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:02:09,119 INFO listen config id:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:02:09,134 INFO listen config id 2:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:02:25,379 INFO listen config id:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:02:25,379 INFO listen config id 2:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:02:37,041 INFO listen config id:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:02:37,041 INFO listen config id 2:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:02:54,891 INFO listen config id:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:02:54,891 INFO listen config id 2:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:03:06,546 INFO listen config id:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:03:06,546 INFO listen config id 2:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:03:24,393 INFO listen config id:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:03:24,394 INFO listen config id 2:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:03:36,050 INFO listen config id:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:03:36,050 INFO listen config id 2:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:03:53,902 INFO listen config id:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:03:53,903 INFO listen config id 2:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:04:05,560 INFO listen config id:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:04:05,561 INFO listen config id 2:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:04:23,416 INFO listen config id:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:04:23,416 INFO listen config id 2:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:04:35,073 INFO listen config id:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:04:35,074 INFO listen config id 2:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:04:52,922 INFO listen config id:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:04:52,922 INFO listen config id 2:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:05:04,579 INFO listen config id:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:05:04,579 INFO listen config id 2:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:05:22,430 INFO listen config id:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:05:22,430 INFO listen config id 2:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:05:34,087 INFO listen config id:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:05:34,088 INFO listen config id 2:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:05:51,942 INFO listen config id:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:05:51,942 INFO listen config id 2:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:06:03,596 INFO listen config id:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:06:03,598 INFO listen config id 2:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:06:21,445 INFO listen config id:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:06:21,445 INFO listen config id 2:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:06:33,108 INFO listen config id:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:06:33,108 INFO listen config id 2:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:06:50,953 INFO listen config id:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:06:50,953 INFO listen config id 2:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:07:02,617 INFO listen config id:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:07:02,617 INFO listen config id 2:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:07:20,462 INFO listen config id:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:07:20,463 INFO listen config id 2:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:07:32,121 INFO listen config id:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:07:32,122 INFO listen config id 2:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:07:49,971 INFO listen config id:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:07:49,972 INFO listen config id 2:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:08:01,631 INFO listen config id:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:08:01,631 INFO listen config id 2:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:08:19,481 INFO listen config id:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:08:19,481 INFO listen config id 2:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:08:24,455 INFO [capacityManagement] start correct usage
+
+2021-01-28 12:08:24,475 INFO [capacityManagement] end correct usage, cost: 0s
+
+2021-01-28 12:08:31,137 INFO listen config id:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:08:31,138 INFO listen config id 2:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:08:33,296 WARN clearConfigHistory start
+
+2021-01-28 12:08:33,334 WARN clearConfigHistory, getBeforeStamp:2020-12-29 12:08:33.0, totalCount:6, pageSize:1000, removeTime:1
+
+2021-01-28 12:08:33,399 ERROR clearConfigHistory error
+
+org.springframework.jdbc.UncategorizedSQLException: PreparedStatementCallback; uncategorized SQLException for SQL [delete from his_config_info where gmt_modified < ? OFFSET 0 ROWS FETCH NEXT ? ROWS ONLY]; SQL state [null]; error code [0]; Borrow prepareStatement from pool failed; nested exception is org.apache.commons.dbcp.SQLNestedException: Borrow prepareStatement from pool failed
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:89)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:81)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:81)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1444)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:632)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:862)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:917)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:927)
+	at com.alibaba.nacos.config.server.utils.PaginationHelper.updateLimit(PaginationHelper.java:208)
+	at com.alibaba.nacos.config.server.service.PersistService.removeConfigHistory(PersistService.java:941)
+	at com.alibaba.nacos.config.server.service.PersistService$$FastClassBySpringCGLIB$$21ae4232.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at com.alibaba.nacos.config.server.service.PersistService$$EnhancerBySpringCGLIB$$a864cbcf.removeConfigHistory(<generated>)
+	at com.alibaba.nacos.config.server.service.dump.DumpService.lambda$init$2(DumpService.java:100)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.commons.dbcp.SQLNestedException: Borrow prepareStatement from pool failed
+	at org.apache.commons.dbcp.PoolingConnection.prepareStatement(PoolingConnection.java:113)
+	at org.apache.commons.dbcp.DelegatingConnection.prepareStatement(DelegatingConnection.java:281)
+	at org.apache.commons.dbcp.PoolingDataSource$PoolGuardConnectionWrapper.prepareStatement(PoolingDataSource.java:313)
+	at org.springframework.jdbc.core.JdbcTemplate$SimplePreparedStatementCreator.createPreparedStatement(JdbcTemplate.java:1557)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:615)
+	... 21 common frames omitted
+Caused by: java.sql.SQLSyntaxErrorException: Syntax error: Encountered "OFFSET" at line 1, column 52.
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory40.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.TransactionResourceImpl.wrapInSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.TransactionResourceImpl.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.ConnectionChild.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedPreparedStatement.<init>(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedPreparedStatement20.<init>(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedPreparedStatement30.<init>(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedPreparedStatement40.<init>(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedPreparedStatement42.<init>(Unknown Source)
+	at org.apache.derby.jdbc.Driver42.newEmbedPreparedStatement(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.prepareStatement(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.prepareStatement(Unknown Source)
+	at org.apache.commons.dbcp.PoolingConnection.makeObject(PoolingConnection.java:285)
+	at org.apache.commons.pool.impl.GenericKeyedObjectPool.borrowObject(GenericKeyedObjectPool.java:1220)
+	at org.apache.commons.dbcp.PoolingConnection.prepareStatement(PoolingConnection.java:107)
+	... 25 common frames omitted
+Caused by: org.apache.derby.impl.jdbc.EmbedSQLException: Syntax error: Encountered "OFFSET" at line 1, column 52.
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory40.wrapArgsForTransportAcrossDRDA(Unknown Source)
+	... 42 common frames omitted
+Caused by: org.apache.derby.iapi.error.StandardException: Syntax error: Encountered "OFFSET" at line 1, column 52.
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.impl.sql.compile.ParserImpl.parseStatement(Unknown Source)
+	at org.apache.derby.impl.sql.GenericStatement.prepMinion(Unknown Source)
+	at org.apache.derby.impl.sql.GenericStatement.prepare(Unknown Source)
+	at org.apache.derby.impl.sql.conn.GenericLanguageConnectionContext.prepareInternalStatement(Unknown Source)
+	... 36 common frames omitted
+2021-01-28 12:08:48,992 INFO listen config id:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:08:48,992 INFO listen config id 2:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:09:00,645 INFO listen config id:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:09:00,646 INFO listen config id 2:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:09:18,494 INFO listen config id:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:09:18,494 INFO listen config id 2:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:09:30,154 INFO listen config id:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:09:30,154 INFO listen config id 2:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:09:47,997 INFO listen config id:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:09:47,997 INFO listen config id 2:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:09:59,656 INFO listen config id:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:09:59,656 INFO listen config id 2:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:10:17,502 INFO listen config id:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:10:17,503 INFO listen config id 2:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:10:29,166 INFO listen config id:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:10:29,166 INFO listen config id 2:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:10:47,005 INFO listen config id:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:10:47,005 INFO listen config id 2:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:10:58,674 INFO listen config id:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:10:58,674 INFO listen config id 2:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:11:16,513 INFO listen config id:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:11:16,514 INFO listen config id 2:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:11:28,181 INFO listen config id:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:11:28,182 INFO listen config id 2:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:11:46,019 INFO listen config id:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:11:46,020 INFO listen config id 2:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:11:57,690 INFO listen config id:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:11:57,690 INFO listen config id 2:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:12:15,526 INFO listen config id:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:12:15,527 INFO listen config id 2:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:12:27,201 INFO listen config id:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:12:27,202 INFO listen config id 2:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:12:45,028 INFO listen config id:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:12:45,028 INFO listen config id 2:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:12:56,713 INFO listen config id:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:12:56,713 INFO listen config id 2:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:13:14,543 INFO listen config id:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:13:14,544 INFO listen config id 2:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:13:26,233 INFO listen config id:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:13:26,238 INFO listen config id 2:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:13:44,052 INFO listen config id:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:13:44,053 INFO listen config id 2:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:13:55,753 INFO listen config id:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:13:55,754 INFO listen config id 2:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:14:13,565 INFO listen config id:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:14:13,565 INFO listen config id 2:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:14:25,274 INFO listen config id:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:14:25,275 INFO listen config id 2:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:14:43,080 INFO listen config id:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:14:43,081 INFO listen config id 2:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:14:54,792 INFO listen config id:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:14:54,793 INFO listen config id 2:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:15:12,598 INFO listen config id:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:15:12,598 INFO listen config id 2:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:15:24,300 INFO listen config id:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:15:24,301 INFO listen config id 2:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:15:42,101 INFO listen config id:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:15:42,101 INFO listen config id 2:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:15:53,812 INFO listen config id:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:15:53,812 INFO listen config id 2:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:16:11,604 INFO listen config id:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:16:11,605 INFO listen config id 2:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:16:23,321 INFO listen config id:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:16:23,321 INFO listen config id 2:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:16:41,110 INFO listen config id:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:16:41,110 INFO listen config id 2:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:16:52,834 INFO listen config id:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:16:52,836 INFO listen config id 2:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:17:10,615 INFO listen config id:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:17:10,615 INFO listen config id 2:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:17:22,345 INFO listen config id:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:17:22,345 INFO listen config id 2:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:17:40,123 INFO listen config id:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:17:40,123 INFO listen config id 2:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:17:51,857 INFO listen config id:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:17:51,857 INFO listen config id 2:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:18:09,647 INFO listen config id:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:18:09,648 INFO listen config id 2:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:18:21,363 INFO listen config id:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:18:21,363 INFO listen config id 2:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:18:24,462 INFO [capacityManagement] start correct usage
+
+2021-01-28 12:18:24,464 INFO [capacityManagement] end correct usage, cost: 0s
+
+2021-01-28 12:18:33,388 WARN clearConfigHistory start
+
+2021-01-28 12:18:33,390 WARN clearConfigHistory, getBeforeStamp:2020-12-29 12:18:33.0, totalCount:6, pageSize:1000, removeTime:1
+
+2021-01-28 12:18:33,396 ERROR clearConfigHistory error
+
+org.springframework.jdbc.UncategorizedSQLException: PreparedStatementCallback; uncategorized SQLException for SQL [delete from his_config_info where gmt_modified < ? OFFSET 0 ROWS FETCH NEXT ? ROWS ONLY]; SQL state [null]; error code [0]; Borrow prepareStatement from pool failed; nested exception is org.apache.commons.dbcp.SQLNestedException: Borrow prepareStatement from pool failed
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:89)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:81)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:81)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1444)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:632)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:862)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:917)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:927)
+	at com.alibaba.nacos.config.server.utils.PaginationHelper.updateLimit(PaginationHelper.java:208)
+	at com.alibaba.nacos.config.server.service.PersistService.removeConfigHistory(PersistService.java:941)
+	at com.alibaba.nacos.config.server.service.PersistService$$FastClassBySpringCGLIB$$21ae4232.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at com.alibaba.nacos.config.server.service.PersistService$$EnhancerBySpringCGLIB$$a864cbcf.removeConfigHistory(<generated>)
+	at com.alibaba.nacos.config.server.service.dump.DumpService.lambda$init$2(DumpService.java:100)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.commons.dbcp.SQLNestedException: Borrow prepareStatement from pool failed
+	at org.apache.commons.dbcp.PoolingConnection.prepareStatement(PoolingConnection.java:113)
+	at org.apache.commons.dbcp.DelegatingConnection.prepareStatement(DelegatingConnection.java:281)
+	at org.apache.commons.dbcp.PoolingDataSource$PoolGuardConnectionWrapper.prepareStatement(PoolingDataSource.java:313)
+	at org.springframework.jdbc.core.JdbcTemplate$SimplePreparedStatementCreator.createPreparedStatement(JdbcTemplate.java:1557)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:615)
+	... 21 common frames omitted
+Caused by: java.sql.SQLSyntaxErrorException: Syntax error: Encountered "OFFSET" at line 1, column 52.
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory40.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.TransactionResourceImpl.wrapInSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.TransactionResourceImpl.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.ConnectionChild.handleException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedPreparedStatement.<init>(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedPreparedStatement20.<init>(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedPreparedStatement30.<init>(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedPreparedStatement40.<init>(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedPreparedStatement42.<init>(Unknown Source)
+	at org.apache.derby.jdbc.Driver42.newEmbedPreparedStatement(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.prepareStatement(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.prepareStatement(Unknown Source)
+	at org.apache.commons.dbcp.PoolingConnection.makeObject(PoolingConnection.java:285)
+	at org.apache.commons.pool.impl.GenericKeyedObjectPool.borrowObject(GenericKeyedObjectPool.java:1220)
+	at org.apache.commons.dbcp.PoolingConnection.prepareStatement(PoolingConnection.java:107)
+	... 25 common frames omitted
+Caused by: org.apache.derby.impl.jdbc.EmbedSQLException: Syntax error: Encountered "OFFSET" at line 1, column 52.
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory40.wrapArgsForTransportAcrossDRDA(Unknown Source)
+	... 42 common frames omitted
+Caused by: org.apache.derby.iapi.error.StandardException: Syntax error: Encountered "OFFSET" at line 1, column 52.
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.impl.sql.compile.ParserImpl.parseStatement(Unknown Source)
+	at org.apache.derby.impl.sql.GenericStatement.prepMinion(Unknown Source)
+	at org.apache.derby.impl.sql.GenericStatement.prepare(Unknown Source)
+	at org.apache.derby.impl.sql.conn.GenericLanguageConnectionContext.prepareInternalStatement(Unknown Source)
+	... 36 common frames omitted
+2021-01-28 12:18:39,149 INFO listen config id:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:18:39,149 INFO listen config id 2:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:18:50,868 INFO listen config id:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:18:50,869 INFO listen config id 2:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:19:08,656 INFO listen config id:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:19:08,656 INFO listen config id 2:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:19:20,373 INFO listen config id:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:19:20,374 INFO listen config id 2:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:19:38,163 INFO listen config id:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:19:38,163 INFO listen config id 2:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:19:49,877 INFO listen config id:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:19:49,878 INFO listen config id 2:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:20:07,667 INFO listen config id:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:20:07,667 INFO listen config id 2:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:20:19,383 INFO listen config id:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:20:19,384 INFO listen config id 2:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:20:37,172 INFO listen config id:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:20:37,172 INFO listen config id 2:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:20:48,887 INFO listen config id:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:20:48,887 INFO listen config id 2:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:21:06,674 INFO listen config id:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:21:06,674 INFO listen config id 2:gulimall-gateway.propertiesDEFAULT_GROUP4e25e870-0717-445e-8bec-622b9501752e
+
+2021-01-28 12:21:18,392 INFO listen config id:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
+2021-01-28 12:21:18,393 INFO listen config id 2:gulimall-product.propertiesDEFAULT_GROUP4f961852-414d-4553-910e-641f84a4c28e
+
