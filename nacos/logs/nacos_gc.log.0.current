@@ -370,3 +370,4 @@ CommandLine flags: -XX:GCLogFileSize=104857600 -XX:InitialHeapSize=536870912 -XX
 2021-04-05T13:57:30.709-0800: 397593.769: [GC (Allocation Failure) [PSYoungGen: 260000K->992K(260608K)] 315943K->56951K(522752K), 0.2038549 secs] [Times: user=0.15 sys=0.17, real=0.21 secs] 
 2021-04-05T14:14:27.427-0800: 398610.481: [GC (Allocation Failure) [PSYoungGen: 260064K->1056K(260608K)] 316023K->57031K(522752K), 0.1599807 secs] [Times: user=0.36 sys=0.17, real=0.16 secs] 
 2021-04-05T14:31:39.821-0800: 399642.865: [GC (Allocation Failure) [PSYoungGen: 260128K->1120K(260608K)] 316103K->57103K(522752K), 0.1425640 secs] [Times: user=0.28 sys=0.15, real=0.14 secs] 
+2021-04-05T14:48:16.358-0800: 400639.333: [GC (Allocation Failure) [PSYoungGen: 260192K->1184K(260608K)] 316175K->57167K(522752K), 0.0861967 secs] [Times: user=0.20 sys=0.13, real=0.09 secs] 

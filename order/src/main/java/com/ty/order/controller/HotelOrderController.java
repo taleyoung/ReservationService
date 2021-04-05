@@ -3,6 +3,7 @@ package com.ty.order.controller;
 
 import com.ty.common.utils.ApiResp;
 import com.ty.common.utils.PageUtils;
+import com.ty.order.aop.OperationLogAnnotation;
 import com.ty.order.entity.HotelOrderEntity;
 import com.ty.order.service.HotelOrderService;
 import com.ty.order.vo.HotelOrderVo;
@@ -38,6 +39,7 @@ public class HotelOrderController {
     }
 
     @PostMapping("")
+    @OperationLogAnnotation(optModule = "订单服务",optType = "新增", optDesc = "创建新订单")
     public ApiResp createOrder(@RequestBody HotelOrderVo hotelOrderVo){
         hotelOrderService.createOrder(hotelOrderVo);
         return ApiResp.retOK();
@@ -63,6 +65,7 @@ public class HotelOrderController {
     }
 
     @PutMapping("/{id}")
+    @OperationLogAnnotation(optModule = "订单服务",optType = "修改", optDesc = "修改订单信息")
     public  ApiResp update(@RequestParam("id") String id, @RequestBody HotelOrderEntity hotelOrderEntity){
         hotelOrderService.updateOrder(hotelOrderEntity);
         return ApiResp.retOK();

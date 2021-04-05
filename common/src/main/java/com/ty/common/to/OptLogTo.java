@@ -16,7 +16,7 @@ public class OptLogTo implements Serializable {
 
     private String type;
 
-    private String model;
+    private String module;
 
     private String description;
 

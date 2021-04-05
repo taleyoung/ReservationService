@@ -58,7 +58,7 @@ public class OperationLogAspect {
             //获取操作
             OperationLogAnnotation annotation = method.getAnnotation(OperationLogAnnotation.class);
             if (annotation != null) {
-                optLogTo.setModel(annotation.optModule());
+                optLogTo.setModule(annotation.optModule());
                 optLogTo.setType(annotation.optType());
                 optLogTo.setDescription(annotation.optDesc());
             }

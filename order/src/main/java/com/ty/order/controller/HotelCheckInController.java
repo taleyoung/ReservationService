@@ -3,6 +3,7 @@ package com.ty.order.controller;
 
 import com.ty.common.utils.ApiResp;
 import com.ty.common.utils.PageUtils;
+import com.ty.order.aop.OperationLogAnnotation;
 import com.ty.order.service.HotelCheckInService;
 import com.ty.order.vo.CheckInStatusVo;
 import io.swagger.annotations.Api;
@@ -29,6 +30,7 @@ public class HotelCheckInController {
     HotelCheckInService hotelCheckInService;
 
     @GetMapping("")
+    @OperationLogAnnotation(optModule = "订单服务",optType = "查询", optDesc = "房间登记情况")
     public ApiResp queryPage(@RequestParam Map<String, Object> params, @RequestParam(value = "userId", required = false) Integer userId){
         PageUtils list = null;
         if(userId == null){
@@ -48,6 +50,7 @@ public class HotelCheckInController {
     }
 
     @PutMapping("/status")
+    @OperationLogAnnotation(optModule = "订单服务",optType = "修改", optDesc = "房间登记状态")
     public  ApiResp updateStatus(@RequestBody CheckInStatusVo vo){
         hotelCheckInService.updateStatus(vo.getOrderId(), vo.getStatus());
         return ApiResp.retOK();

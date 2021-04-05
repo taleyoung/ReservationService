@@ -282,3 +282,59 @@
 
 2021-04-05 14:32:14,808 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@room, ips: 192.168.3.15:7000_true,
 
+2021-04-05 14:38:52,846 INFO DEFAULT_GROUP@@order {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.3.15:8000:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-04-05 14:38:52,848 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@order, ips: 
+
+2021-04-05 14:39:21,656 INFO DEFAULT_GROUP@@order {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.3.15:8000:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-04-05 14:39:21,657 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@order, ips: 192.168.3.15:8000_true,
+
+2021-04-05 14:49:19,002 INFO DEFAULT_GROUP@@order {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.3.15:8000:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-04-05 14:49:19,002 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@order, ips: 
+
+2021-04-05 14:49:20,622 INFO DEFAULT_GROUP@@room {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.3.15:7000:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-04-05 14:49:20,622 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@room, ips: 
+
+2021-04-05 14:49:32,571 INFO DEFAULT_GROUP@@user {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.3.15:9000:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-04-05 14:49:32,571 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user, ips: 
+
+2021-04-05 14:49:43,357 INFO DEFAULT_GROUP@@room {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.3.15:7000:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-04-05 14:49:43,357 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@room, ips: 192.168.3.15:7000_true,
+
+2021-04-05 14:49:44,974 INFO DEFAULT_GROUP@@user {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.3.15:9000:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-04-05 14:49:44,975 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user, ips: 192.168.3.15:9000_true,
+
+2021-04-05 14:49:48,644 INFO DEFAULT_GROUP@@order {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.3.15:8000:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-04-05 14:49:48,644 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@order, ips: 192.168.3.15:8000_true,
+
+2021-04-05 14:53:42,173 INFO DEFAULT_GROUP@@room {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.3.15:7000:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-04-05 14:53:42,174 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@room, ips: 
+
+2021-04-05 14:53:44,493 INFO DEFAULT_GROUP@@order {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.3.15:8000:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-04-05 14:53:44,493 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@order, ips: 
+
+2021-04-05 14:53:46,509 INFO DEFAULT_GROUP@@user {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.3.15:9000:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-04-05 14:53:46,509 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user, ips: 
+
+2021-04-05 14:54:04,182 INFO DEFAULT_GROUP@@room {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.3.15:7000:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-04-05 14:54:04,182 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@room, ips: 192.168.3.15:7000_true,
+
+2021-04-05 14:54:09,828 INFO DEFAULT_GROUP@@order {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.3.15:8000:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-04-05 14:54:09,829 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@order, ips: 192.168.3.15:8000_true,
+
+2021-04-05 14:54:17,031 INFO DEFAULT_GROUP@@user {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.3.15:9000:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2021-04-05 14:54:17,032 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user, ips: 192.168.3.15:9000_true,
+

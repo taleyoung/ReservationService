@@ -37,7 +37,7 @@ public class OptLogEntity implements Serializable {
 
     private String type;
 
-    private String model;
+    private String module;
 
     private String description;
 
