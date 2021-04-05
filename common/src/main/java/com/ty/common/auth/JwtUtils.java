@@ -6,7 +6,7 @@ import com.auth0.jwt.algorithms.Algorithm;
 public class JwtUtils {
 //    public String getToken(UserEntity user) {
 //        String token="";
-//        token= JWT.create().withAudience(user.getId())
+//        token= JWT.create().withAudience(String.valueOf(user.getId()))
 //                .sign(Algorithm.HMAC256(user.getPassword()));
 //        return token;
 //    }

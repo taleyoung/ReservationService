@@ -2,6 +2,7 @@ package com.ty.room.controller;
 
 import com.ty.common.utils.ApiResp;
 import com.ty.common.utils.PageUtils;
+import com.ty.room.aop.OperationLogAnnotation;
 import com.ty.room.entity.MeetingRoomEntity;
 import com.ty.room.service.MeetingRoomService;
 import com.ty.room.vo.RoomMeetingVo;
@@ -36,6 +37,7 @@ public class MeetingRoomController {
 
     @PostMapping("/meeting-room")
     @ApiOperation(value = "增加会议室")
+    @OperationLogAnnotation(optModule = "会议服务",optType = "新增", optDesc = "会议室")
     public ApiResp addRoom(@RequestBody MeetingRoomEntity roomInfo){
         meetingRoomService.addRoom(roomInfo);
         return ApiResp.retOK();
@@ -43,6 +45,7 @@ public class MeetingRoomController {
 
     @PutMapping("/meeting-room/{id}")
     @ApiOperation(value = "更新会议室")
+    @OperationLogAnnotation(optModule = "会议服务",optType = "修改", optDesc = "会议室")
     public ApiResp updateRoom(@PathVariable("id") String roomId, @RequestBody MeetingRoomEntity roomInfo){
         Long id = Long.valueOf(roomId);
         meetingRoomService.updateRoom(id, roomInfo);
@@ -51,6 +54,7 @@ public class MeetingRoomController {
 
     @DeleteMapping("/meeting-room/{id}")
     @ApiOperation(value = "删除会议室")
+    @OperationLogAnnotation(optModule = "会议服务",optType = "删除", optDesc = "会议室")
     public ApiResp deleteRoom(@PathVariable("id") String roomId){
         Long id = Long.valueOf(roomId);
         meetingRoomService.deleteRoom(id);

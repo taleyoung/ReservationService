@@ -7,6 +7,7 @@ import com.ty.order.entity.HotelOrderEntity;
 import com.ty.order.service.HotelOrderService;
 import com.ty.order.vo.HotelOrderVo;
 import io.swagger.annotations.Api;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,6 +28,9 @@ public class HotelOrderController {
     @Autowired
     HotelOrderService hotelOrderService;
 
+    @Autowired
+    RabbitTemplate rabbitTemplate;
+
     @GetMapping("")
     public ApiResp queryPage(@RequestParam Map<String, Object> params){
         PageUtils list = hotelOrderService.queryPage(params);
@@ -34,8 +38,8 @@ public class HotelOrderController {
     }
 
     @PostMapping("")
-    public ApiResp add(@RequestBody HotelOrderVo hotelOrderVo){
-        hotelOrderService.add(hotelOrderVo);
+    public ApiResp createOrder(@RequestBody HotelOrderVo hotelOrderVo){
+        hotelOrderService.createOrder(hotelOrderVo);
         return ApiResp.retOK();
     }
 
@@ -43,6 +47,13 @@ public class HotelOrderController {
     public ApiResp testPayAndSuccess(@RequestBody HotelOrderVo hotelOrderVo){
         hotelOrderService.testPayAndSuccess(hotelOrderVo);
         return ApiResp.retOK();
+    }
+
+    @PostMapping("/testPayAndCancel")
+    public ApiResp testOrderQueue(@RequestBody HotelOrderVo hotelOrderVo){
+        hotelOrderService.testPayAndCancel(hotelOrderVo);
+        return ApiResp.retOK();
+
     }
 
     @PostMapping("success-payed")

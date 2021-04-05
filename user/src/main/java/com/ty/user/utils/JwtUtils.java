@@ -7,7 +7,9 @@ import com.ty.user.entity.UserEntity;
 public class JwtUtils {
     public String getToken(UserEntity user) {
         String token="";
-        token= JWT.create().withAudience(String.valueOf(user.getId()))
+        token= JWT.create()
+                .withClaim("userId",user.getId())
+                .withClaim("userName",user.getUsername())
                 .sign(Algorithm.HMAC256(user.getPassword()));
         return token;
     }

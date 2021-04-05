@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.ty.common.enume.CheckInEnum;
 import com.ty.common.enume.OrderStatusEnum;
+import com.ty.common.utils.ApiResp;
 import com.ty.common.utils.PageUtils;
 import com.ty.common.utils.Query;
 import com.ty.order.entity.HotelCheckInEntity;
@@ -14,6 +15,7 @@ import com.ty.order.service.HotelOrderService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.ty.order.vo.HotelOrderVo;
 import com.ty.order.vo.PayVo;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -36,6 +38,9 @@ public class HotelOrderServiceImpl extends ServiceImpl<HotelOrderDao, HotelOrder
     @Autowired
     HotelCheckInService hotelCheckInService;
 
+    @Autowired
+    RabbitTemplate rabbitTemplate;
+
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
         IPage<HotelOrderEntity> page = this.page(
@@ -46,7 +51,7 @@ public class HotelOrderServiceImpl extends ServiceImpl<HotelOrderDao, HotelOrder
 
     @Transactional
     @Override
-    public HotelOrderEntity add(HotelOrderVo hotelOrderVo) {
+    public HotelOrderEntity createOrder(HotelOrderVo hotelOrderVo) {
         HotelOrderEntity hotelOrderEntity = new HotelOrderEntity();
         //TODO 登记业务
         BeanUtils.copyProperties(hotelOrderVo, hotelOrderEntity);
@@ -56,20 +61,25 @@ public class HotelOrderServiceImpl extends ServiceImpl<HotelOrderDao, HotelOrder
         // 添加登记表
         hotelCheckInService.add(hotelOrderEntity.getId(), hotelOrderVo);
         //TODO 去支付
+        //消息队列发消息 创建订单
+        rabbitTemplate.convertAndSend("order-event-exchange","order.create.order",hotelOrderEntity);
         return hotelOrderEntity;
     }
 
     @Override
     public void handlePayResult(boolean payResult, Integer hotelOrderId){
         HotelOrderEntity orderEntity = this.getById(hotelOrderId);
-        if(!payResult){
+        if(payResult){
+            //付款成功 更改状态
+            orderEntity.setStatus(OrderStatusEnum.PAYED.getCode());
+            this.updateById(orderEntity);
+            hotelCheckInService.updateStatus(hotelOrderId, CheckInEnum.WAIT_CHECK_IN.getCode());
+        }else{
             orderEntity.setStatus(OrderStatusEnum.ERROR.getCode());
             this.updateById(orderEntity);
+            //待定
+            hotelCheckInService.updateStatus(hotelOrderId, CheckInEnum.CANCEL.getCode());
         }
-        //付款成功 更改状态
-        orderEntity.setStatus(OrderStatusEnum.PAYED.getCode());
-        this.updateById(orderEntity);
-        hotelCheckInService.updateStatus(hotelOrderId, CheckInEnum.WAIT_CHECK_IN.getCode());
 
     }
 
@@ -90,7 +100,13 @@ public class HotelOrderServiceImpl extends ServiceImpl<HotelOrderDao, HotelOrder
 
     @Override
     public void testPayAndSuccess(HotelOrderVo hotelOrderVo) {
-        HotelOrderEntity orderEntity = this.add(hotelOrderVo);
+        HotelOrderEntity orderEntity = this.createOrder(hotelOrderVo);
         this.handlePayResult(true, orderEntity.getId());
+    }
+
+    @Override
+    public void testPayAndCancel(HotelOrderVo hotelOrderVo) {
+        HotelOrderEntity orderEntity = this.createOrder(hotelOrderVo);
+        rabbitTemplate.convertAndSend("order-event-exchange","order.create.order",orderEntity);
     }
 }

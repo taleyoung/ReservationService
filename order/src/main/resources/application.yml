@@ -16,6 +16,10 @@ spring:
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
+  rabbitmq:
+    host: ${ipAddr}
+    port: 5672
+    virtual-host: /
 logging:
   level:
     com.ty.order.dao: debug

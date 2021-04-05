@@ -2,6 +2,7 @@ package com.ty.room.controller;
 
 import com.ty.common.utils.ApiResp;
 import com.ty.common.utils.PageUtils;
+import com.ty.room.aop.OperationLogAnnotation;
 import com.ty.room.entity.HotelRoomTypeEntity;
 import com.ty.room.service.HotelRoomTypeService;
 import io.swagger.annotations.Api;
@@ -27,6 +28,7 @@ public class HotelRoomTypeController {
     }
     @PostMapping("")
     @ApiOperation(value = "添加酒店房间类型")
+    @OperationLogAnnotation(optModule = "酒店服务",optType = "添加", optDesc = "酒店房型")
     public ApiResp add(@RequestBody HotelRoomTypeEntity hotelRoomTypeEntity){
         hotelRoomTypeService.add(hotelRoomTypeEntity);
         return ApiResp.retOK();
@@ -34,6 +36,7 @@ public class HotelRoomTypeController {
 
     @PutMapping("{id}")
     @ApiOperation(value = "修改酒店房间类型信息")
+    @OperationLogAnnotation(optModule = "酒店服务",optType = "修改", optDesc = "酒店房间信息")
     public ApiResp update(@PathVariable("id") String id, @RequestBody HotelRoomTypeEntity hotelRoomTypeEntity){
         hotelRoomTypeService.update(Long.valueOf(id), hotelRoomTypeEntity);
         return ApiResp.retOK();
@@ -41,6 +44,7 @@ public class HotelRoomTypeController {
 
     @DeleteMapping("{id}")
     @ApiOperation(value = "删除酒店类型")
+    @OperationLogAnnotation(optModule = "酒店服务",optType = "删除", optDesc = "酒店房型")
     public ApiResp delete(@PathVariable("id") String id){
         hotelRoomTypeService.delete(Long.valueOf(id));
         return ApiResp.retOK();

@@ -4,12 +4,13 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
+import java.io.Serializable;
 import java.sql.Time;
 import java.util.Date;
 
 
 @Data
-public class HotelOrderVo {
+public class HotelOrderVo implements Serializable {
 
     private Integer hotelRoomTypeId;
 
