@@ -3,13 +3,12 @@ package com.ty.user.controller;
 
 import com.ty.common.to.OptLogTo;
 import com.ty.common.utils.ApiResp;
+import com.ty.common.utils.PageUtils;
 import com.ty.user.service.OptLogService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
-import org.springframework.web.bind.annotation.RestController;
+import java.util.Map;
 
 /**
  * <p>
@@ -29,5 +28,11 @@ public class OptLogController {
     public ApiResp reportLog(@RequestBody OptLogTo optLogTo){
         optLogService.reportLog(optLogTo);
         return ApiResp.retOK();
+    }
+
+    @GetMapping("")
+    public ApiResp getList(@RequestParam Map<String, Object> params){
+        PageUtils list = optLogService.queryPage(params);
+        return ApiResp.retOK(list);
     }
 }
