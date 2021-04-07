@@ -11,6 +11,7 @@ import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestAttributes;
@@ -27,6 +28,9 @@ import java.time.LocalDateTime;
 public class OperationLogAspect {
     @Autowired
     UserFeignService userFeignService;
+
+    @Autowired
+    RabbitTemplate rabbitTemplate;
 
     private static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
@@ -77,7 +81,10 @@ public class OperationLogAspect {
             //返回值信息
             optLogTo.setResult(result.getMsg());
             //保存日志
-            userFeignService.reportLog(optLogTo);
+//            userFeignService.reportLog(optLogTo);
+
+            //保存日志，发送到消息队列
+            rabbitTemplate.convertAndSend("user-event-exchange","user.create.log",optLogTo);
 
         } catch (Exception e) {
             e.printStackTrace();

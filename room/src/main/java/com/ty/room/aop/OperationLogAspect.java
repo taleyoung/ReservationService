@@ -11,6 +11,7 @@ import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestAttributes;
@@ -31,6 +32,9 @@ import java.util.Map;
 public class OperationLogAspect {
     @Autowired
     UserFeignService userFeignService;
+
+    @Autowired
+    RabbitTemplate rabbitTemplate;
 
     private static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
@@ -65,15 +69,19 @@ public class OperationLogAspect {
             //操作时间
             optLogTo.setOptTime(LocalDateTime.now());
             //操作用户
-            Cookie[] cookies = request.getCookies();
-            for (Cookie cookie : cookies) {
-                String name = cookie.getName();
-                if (cookie.getName().equals("jwtToken")) {
-                    DecodedJWT decodedJWT = JWT.decode(cookie.getValue());
-                    Integer userId = decodedJWT.getClaim("userId").asInt();
-                    String userName = decodedJWT.getClaim("userName").asString();
-                    optLogTo.setUserId(userId);
-                    optLogTo.setUserName(userName);
+            if(request!=null){
+                Cookie[] cookies = request.getCookies();
+                if(cookies!=null){
+                    for (Cookie cookie : cookies) {
+                        String name = cookie.getName();
+                        if (cookie.getName().equals("jwtToken")) {
+                            DecodedJWT decodedJWT = JWT.decode(cookie.getValue());
+                            Integer userId = decodedJWT.getClaim("userId").asInt();
+                            String userName = decodedJWT.getClaim("userName").asString();
+                            optLogTo.setUserId(userId);
+                            optLogTo.setUserName(userName);
+                        }
+                    }
                 }
             }
             //操作IP
@@ -81,7 +89,9 @@ public class OperationLogAspect {
             //返回值信息
             optLogTo.setResult(result.getMsg());
             //保存日志
-            userFeignService.reportLog(optLogTo);
+//            userFeignService.reportLog(optLogTo);
+            //保存日志，发送到消息队列
+            rabbitTemplate.convertAndSend("user-event-exchange","user.create.log",optLogTo);
 
         } catch (Exception e) {
             e.printStackTrace();
