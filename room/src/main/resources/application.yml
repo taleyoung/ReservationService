@@ -11,10 +11,10 @@ spring:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
-    sentinel:
-      transport:
-        dashboard: localhost:8333
-        port: 8719
+#    sentinel:
+#      transport:
+#        dashboard: localhost:8333
+#        port: 8719
   application:
     name: room
   jackson:
@@ -37,7 +37,7 @@ mybatis-plus:
 #      logic-not-delete-value: 0
 
 #链路追踪需要开启的日志loggin
-logging:
-  level:
-    org.springframework.cloud.openfeign: debug
-    org.springframework.cloud.sleuth: debug
+#logging:
+#  level:
+#    org.springframework.cloud.openfeign: debug
+#    org.springframework.cloud.sleuth: debug

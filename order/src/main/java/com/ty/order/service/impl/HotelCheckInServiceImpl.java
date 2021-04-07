@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.ty.common.enume.CheckInEnum;
 import com.ty.common.to.HotelRoomTo;
 import com.ty.common.utils.ApiResp;
+import com.ty.common.utils.HumpNameUtils;
 import com.ty.common.utils.PageUtils;
 import com.ty.common.utils.Query;
 import com.ty.order.entity.HotelCheckInEntity;
@@ -17,6 +18,8 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -126,9 +129,40 @@ public class HotelCheckInServiceImpl extends ServiceImpl<HotelCheckInDao, HotelC
 
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
+        QueryWrapper<HotelCheckInEntity> wrapper = new QueryWrapper<HotelCheckInEntity>().orderByDesc("date");
+        String[] queryList = new String[]{"hotelName", "hotelRoomNum","hotelRoomTypeName","userName","personName","personIdNumber"};
+        for(String query: queryList){
+            if(params.get(query)!=null){
+                String columnName = HumpNameUtils.hump2LowerColumnName(query);
+                wrapper.eq(columnName, params.get(query));
+            }
+        }
+//        if(params.get("hotelName")!=null){
+//            wrapper.eq("hotel_name", params.get("hotelName"));
+//        }
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        if(params.get("startDate")!=null){
+            try{
+                String date = (String) params.get("startDate");
+                wrapper.ge("date", sdf.parse(date));
+            }catch (Exception e){
+                log.error(e.getMessage());
+            }
+
+        }
+        if(params.get("endDate")!=null){
+            try{
+                String date = (String) params.get("endDate");
+                wrapper.le("date", sdf.parse(date));
+            }catch (Exception e){
+                log.error(e.getMessage());
+            }
+
+        }
+
         IPage<HotelCheckInEntity> page = this.page(
                 new Query<HotelCheckInEntity>().getPage(params),
-                new QueryWrapper<HotelCheckInEntity>().orderByDesc("date"));
+                wrapper);
         return new PageUtils(page);
     }
 
