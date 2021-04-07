@@ -6,6 +6,7 @@ import com.ty.order.entity.HotelCheckInEntity;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.ty.order.vo.HotelOrderVo;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -32,5 +33,5 @@ public interface HotelCheckInService extends IService<HotelCheckInEntity> {
 
     void updateStatus(Integer orderId, Integer code);
 
-    PageUtils queryPageByUserId(Map<String, Object> params, Integer userId);
+    PageUtils queryPageByUserId(Map<String, Object> params, HttpServletRequest request);
 }

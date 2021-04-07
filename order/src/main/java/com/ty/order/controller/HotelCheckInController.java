@@ -7,9 +7,11 @@ import com.ty.order.aop.OperationLogAnnotation;
 import com.ty.order.service.HotelCheckInService;
 import com.ty.order.vo.CheckInStatusVo;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Map;
@@ -30,14 +32,17 @@ public class HotelCheckInController {
     HotelCheckInService hotelCheckInService;
 
     @GetMapping("")
+    @ApiOperation("获取客房情况表")
     @OperationLogAnnotation(optModule = "订单服务",optType = "查询", optDesc = "房间登记情况")
-    public ApiResp queryPage(@RequestParam Map<String, Object> params, @RequestParam(value = "userId", required = false) Integer userId){
-        PageUtils list = null;
-        if(userId == null){
-             list = hotelCheckInService.queryPage(params);
-        }else{
-             list = hotelCheckInService.queryPageByUserId(params, userId);
-        }
+    public ApiResp queryPage(@RequestParam Map<String, Object> params){
+        PageUtils list =  hotelCheckInService.queryPage(params);
+        return ApiResp.retOK(list);
+    }
+
+    @GetMapping("/user")
+    @ApiOperation("获取用户预订的酒店")
+    public ApiResp queryPageUser(@RequestParam Map<String, Object> params, HttpServletRequest request){
+        PageUtils list = hotelCheckInService.queryPageByUserId(params, request);
 
         return ApiResp.retOK(list);
     }

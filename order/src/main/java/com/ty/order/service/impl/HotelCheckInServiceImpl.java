@@ -1,5 +1,7 @@
 package com.ty.order.service.impl;
 
+import com.auth0.jwt.JWT;
+import com.auth0.jwt.interfaces.DecodedJWT;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.ty.common.enume.CheckInEnum;
@@ -18,6 +20,8 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -42,7 +46,8 @@ public class HotelCheckInServiceImpl extends ServiceImpl<HotelCheckInDao, HotelC
 //        java.sql.Date sqlDate = new java.sql.Date(date.getTime());
         QueryWrapper<HotelCheckInEntity> wrapper = new QueryWrapper<HotelCheckInEntity>()
                 .eq("hotel_room_type_id", hotelRoomTypeId)
-                .eq("date",date);
+                .eq("date",date)
+                .ne("status", CheckInEnum.CANCEL.getCode());
         List<HotelCheckInEntity> list = this.list(wrapper);
         return list;
     }
@@ -162,12 +167,21 @@ public class HotelCheckInServiceImpl extends ServiceImpl<HotelCheckInDao, HotelC
 
         IPage<HotelCheckInEntity> page = this.page(
                 new Query<HotelCheckInEntity>().getPage(params),
-                wrapper);
+                wrapper.orderByDesc("update_time"));
         return new PageUtils(page);
     }
 
     @Override
-    public PageUtils queryPageByUserId(Map<String, Object> params, Integer userId) {
+    public PageUtils queryPageByUserId(Map<String, Object> params, HttpServletRequest request) {
+        Cookie[] cookies = request.getCookies();
+        Integer userId = 1;
+        for (Cookie cookie : cookies) {
+            String name = cookie.getName();
+            if (cookie.getName().equals("jwtToken")) {
+                DecodedJWT decodedJWT = JWT.decode(cookie.getValue());
+                userId = decodedJWT.getClaim("userId").asInt();
+            }
+        }
         IPage<HotelCheckInEntity> page = this.page(
                 new Query<HotelCheckInEntity>().getPage(params),
                 new QueryWrapper<HotelCheckInEntity>().eq("user_id",userId).orderByDesc("date"));
