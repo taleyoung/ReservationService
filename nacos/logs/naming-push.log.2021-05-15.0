@@ -1,0 +1,36 @@
+2021-05-15 00:23:29,935 INFO DEFAULT_GROUP@@user is changed, add it to push queue.
+
+2021-05-15 00:23:29,936 INFO DEFAULT_GROUP@@gateway is changed, add it to push queue.
+
+2021-05-15 00:23:29,936 INFO DEFAULT_GROUP@@order is changed, add it to push queue.
+
+2021-05-15 00:23:29,936 INFO DEFAULT_GROUP@@room is changed, add it to push queue.
+
+2021-05-15 00:23:34,999 INFO DEFAULT_GROUP@@room is changed, add it to push queue.
+
+2021-05-15 00:23:35,000 INFO serviceName: DEFAULT_GROUP@@room changed, schedule push for: 127.0.0.1:50146, agent: Nacos-Java-Client:v1.4.1, key: 127.0.0.1,50146,145703786096714
+
+2021-05-15 00:23:35,000 INFO send udp packet: 127.0.0.1,50146,145703786096714
+
+2021-05-15 00:23:35,001 INFO serviceName: DEFAULT_GROUP@@room changed, schedule push for: 127.0.0.1:59176, agent: Nacos-Java-Client:v1.4.1, key: 127.0.0.1,59176,145703786096714
+
+2021-05-15 00:23:35,001 INFO send udp packet: 127.0.0.1,59176,145703786096714
+
+2021-05-15 00:23:35,009 INFO received ack: {"type": "push-ack", "lastRefTime":"145703786096714", "data":""} from: 127.0.0.1:59176, cost: 8 ms, unacked: 1, total push: 12
+
+2021-05-15 00:23:35,017 INFO received ack: {"type": "push-ack", "lastRefTime":"145703786096714", "data":""} from: 127.0.0.1:50146, cost: 17 ms, unacked: 0, total push: 12
+
+2021-05-15 00:23:35,193 INFO DEFAULT_GROUP@@user is changed, add it to push queue.
+
+2021-05-15 00:23:35,206 INFO serviceName: DEFAULT_GROUP@@user changed, schedule push for: 127.0.0.1:59176, agent: Nacos-Java-Client:v1.4.1, key: 127.0.0.1,59176,145703992458578
+
+2021-05-15 00:23:35,206 INFO send udp packet: 127.0.0.1,59176,145703992458578
+
+2021-05-15 00:23:35,206 INFO serviceName: DEFAULT_GROUP@@user changed, schedule push for: 127.0.0.1:64873, agent: Nacos-Java-Client:v1.4.1, key: 127.0.0.1,64873,145703992458578
+
+2021-05-15 00:23:35,206 INFO send udp packet: 127.0.0.1,64873,145703992458578
+
+2021-05-15 00:23:35,208 INFO received ack: {"type": "push-ack", "lastRefTime":"145703992458578", "data":""} from: 127.0.0.1:59176, cost: 1 ms, unacked: 1, total push: 14
+
+2021-05-15 00:23:35,216 INFO received ack: {"type": "push-ack", "lastRefTime":"145703992458578", "data":""} from: 127.0.0.1:64873, cost: 10 ms, unacked: 0, total push: 14
+

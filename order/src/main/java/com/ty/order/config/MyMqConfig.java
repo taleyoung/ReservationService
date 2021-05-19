@@ -17,7 +17,7 @@ public class MyMqConfig {
     @Bean
     public Queue orderDelayQueue(){
         HashMap<String, Object> args = new HashMap<>();
-        args.put("x-dead-letter-exchange","order-event-exchange");
+        args.put("x-dead-letter-exchangel","order-event-exchange");
         args.put("x-dead-letter-routing-key","order.release.order");
         args.put("x-message-ttl",10000);
        return new Queue("order.delay.queue", true, false, false,args);

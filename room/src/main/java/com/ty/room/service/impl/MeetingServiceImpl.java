@@ -24,7 +24,7 @@ public class MeetingServiceImpl extends ServiceImpl<MeetingDao, MeetingEntity> i
 
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
-        IPage<MeetingEntity> page = this.page(new Query<MeetingEntity>().getPage(params), new QueryWrapper<>());
+        IPage<MeetingEntity> page = this.page(new Query<MeetingEntity>().getPage(params), new QueryWrapper<MeetingEntity>().orderByDesc("update_time"));
 
         return new PageUtils(page);
     }

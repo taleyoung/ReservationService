@@ -40,8 +40,6 @@ public class OperationLogAspect {
     @Pointcut("@annotation(com.ty.order.aop.OperationLogAnnotation)")
     public void operLogPoinCut() {
     }
-
-
     @AfterReturning(returning = "result", value = "operLogPoinCut()")
     public void saveOperLog(JoinPoint joinPoint, ApiResp result) throws Throwable {
         // 获取RequestAttributes
@@ -90,5 +88,4 @@ public class OperationLogAspect {
             e.printStackTrace();
         }
     }
-
 }

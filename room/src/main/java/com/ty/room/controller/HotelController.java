@@ -10,11 +10,13 @@ import com.ty.room.vo.HotelWithRoomTypeVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 @Api(value = "酒店管理")
@@ -31,8 +33,10 @@ public class HotelController {
     @GetMapping("")
     @ApiOperation("获取酒店列表")
     @OperationLogAnnotation(optModule = "酒店服务",optType = "查询", optDesc = "酒店列表")
-    public ApiResp<PageUtils> queryPage(@RequestParam(required = false) Map<String, Object> params){
-        PageUtils list = hotelService.queryPage(params);
+    public ApiResp queryPage(@RequestParam(required = false) Map<String, Object> params){
+//        PageUtils list = hotelService.queryPage(params);
+//        return ApiResp.retOK(list);
+        PageUtils list = hotelService.getList(params);
         return ApiResp.retOK(list);
     }
 

@@ -5,6 +5,7 @@ import com.ty.common.utils.ApiResp;
 import com.ty.room.entity.HotelRoomEntity;
 import com.ty.room.service.HotelRoomService;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,6 +27,7 @@ public class HotelRoomController {
     HotelRoomService hotelRoomService;
 
     @GetMapping("")
+    @ApiOperation(value = "修改酒店房间信息")
     public ApiResp<List<HotelRoomEntity>> getListByTypeId(@RequestParam Integer roomTypeId){
         List<HotelRoomEntity> list = hotelRoomService.getListByTypeId(roomTypeId);
         return ApiResp.retOK(list);

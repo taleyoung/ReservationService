@@ -27,6 +27,8 @@ spring:
     host: ${ipAddr}
     port: 5672
     virtual-host: /
+  redis:
+    host: ${ipAddr}
 mybatis-plus:
 #  mapper-locations: classpath:/mapper/**/*.xml
   global-config:

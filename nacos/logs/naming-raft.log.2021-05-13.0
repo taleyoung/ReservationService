@@ -1,0 +1,80 @@
+2021-05-13 15:34:39,440 INFO initializing Raft sub-system
+
+2021-05-13 15:34:39,441 INFO finish loading all datums, size: 0 cost 0 ms.
+
+2021-05-13 15:34:39,441 INFO raft notifier started
+
+2021-05-13 15:34:39,443 INFO cache loaded, datum count: 0, current term: 0
+
+2021-05-13 15:34:39,443 INFO finish to load data from disk, cost: 2 ms.
+
+2021-05-13 15:34:39,446 INFO timer started: leader timeout ms: 15000, heart-beat timeout ms: 5000
+
+2021-05-13 15:34:39,338 INFO server list is updated, new: 1 servers: [{"adWeight":0,"alive":false,"ip":"192.168.3.15","key":"192.168.3.15:0","lastRefTime":0,"servePort":0,"site":"unknown","weight":1}]
+
+2021-05-13 15:34:39,455 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.3.15","key":"192.168.3.15:0","lastRefTime":0,"lastRefTimeStr":"","servePort":0,"site":"unknown","weight":1}]
+
+2021-05-13 15:34:40,255 INFO add listener: com.alibaba.nacos.naming.domains.meta.00-00---000-NACOS_SWITCH_DOMAIN-000---00-00
+
+2021-05-13 15:34:40,268 INFO add listener: com.alibaba.nacos.naming.domains.meta.
+
+2021-05-13 15:34:44,333 INFO server list is updated, new: 1 servers: [{"adWeight":0,"alive":false,"ip":"192.168.3.15","key":"192.168.3.15:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-05-13 15:34:44,333 INFO server list is updated, dead: 1, servers: [{"adWeight":0,"alive":false,"ip":"192.168.3.15","key":"192.168.3.15:0","lastRefTime":0,"lastRefTimeStr":"","servePort":0,"site":"unknown","weight":1}]
+
+2021-05-13 15:34:44,333 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.3.15","key":"192.168.3.15:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-05-13 15:34:47,349 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.3.15","key":"192.168.3.15:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-05-13 15:35:00,176 INFO add listener: com.alibaba.nacos.naming.iplist.public##DEFAULT_GROUP@@gateway
+
+2021-05-13 15:35:49,017 INFO add listener: com.alibaba.nacos.naming.iplist.public##DEFAULT_GROUP@@room
+
+2021-05-13 15:35:54,539 INFO add listener: com.alibaba.nacos.naming.iplist.public##DEFAULT_GROUP@@user
+
+2021-05-13 15:36:11,140 INFO add listener: com.alibaba.nacos.naming.iplist.public##DEFAULT_GROUP@@order
+
+2021-05-13 17:10:18,109 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.3.15","key":"192.168.3.15:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-05-13 17:10:20,103 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.3.15","key":"192.168.3.15:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-05-13 17:46:12,470 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.3.15","key":"192.168.3.15:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-05-13 17:46:14,472 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.3.15","key":"192.168.3.15:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-05-13 18:06:40,812 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.3.15","key":"192.168.3.15:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-05-13 18:06:42,813 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.3.15","key":"192.168.3.15:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-05-13 18:29:57,956 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.3.15","key":"192.168.3.15:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-05-13 18:29:59,965 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.3.15","key":"192.168.3.15:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-05-13 18:50:16,750 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.3.15","key":"192.168.3.15:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-05-13 18:50:18,755 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.3.15","key":"192.168.3.15:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-05-13 19:08:11,805 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.3.15","key":"192.168.3.15:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-05-13 19:08:13,804 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.3.15","key":"192.168.3.15:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-05-13 20:30:33,024 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.3.15","key":"192.168.3.15:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-05-13 20:30:35,031 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.3.15","key":"192.168.3.15:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-05-13 20:36:39,081 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.3.15","key":"192.168.3.15:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-05-13 20:36:41,082 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.3.15","key":"192.168.3.15:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-05-13 21:53:51,576 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.3.15","key":"192.168.3.15:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-05-13 21:53:53,311 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.3.15","key":"192.168.3.15:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-05-13 21:55:28,123 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.3.15","key":"192.168.3.15:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-05-13 21:55:30,128 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.3.15","key":"192.168.3.15:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-05-13 22:12:26,955 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.3.15","key":"192.168.3.15:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
+2021-05-13 22:12:28,962 INFO raft peers changed: [{"adWeight":0,"alive":false,"ip":"192.168.3.15","key":"192.168.3.15:8848","lastRefTime":0,"lastRefTimeStr":"","servePort":8848,"site":"unknown","weight":1}]
+
